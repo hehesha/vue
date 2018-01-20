@@ -22,14 +22,6 @@
 import './buy.scss'
 export default {
 
-    methods:{
-        incrementTotal:function(event){
-            if(event.target.tagName.toLowerCase()=='a'){
-                var a = event.target.parentNode.children;
-                event.target.style.borderBottom = '1px solid #ccc';
-
-            }
-    }
-  }
+    
 }
 </script>
