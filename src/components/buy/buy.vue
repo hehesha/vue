@@ -26,10 +26,11 @@
         },
         methods:{
             incrementTotal:function(event){
-                if(event.target.tagName.toLowerCase()=='a'){
-                    var a = event.target.parentNode.children;
-                    event.target.style.borderBottom = '1px solid #ccc';
+                var item = event.target.parentNode.children;
+                for(var i=0;i<item.length;i++){
+                    item[i].style.borderBottom="";
                 }
+                event.target.style.borderBottom = "1px solid red";
             }
         }
     }
