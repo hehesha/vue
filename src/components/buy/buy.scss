@@ -30,12 +30,18 @@
 .head_r .search{
     margin-left:0.8rem;
 }
-#nav ul{
-    display:flex;
-    justify-content:space-around;
-}
-#nav ul li{
+#nav{overflow:hidden}
+#nav a{
     font-size:0.4rem;
-    height:1.013333rem;
     line-height:1.013333rem;
+    height:1.013333rem;
+    width:1.626667rem;
+    float:left;
+    display:block;
+    text-align: center
+}
+#banner ul li{
+    background:url('../../assets/banner.jpg') no-repeat;
+    background-position:center;
+    height:400px;
 }

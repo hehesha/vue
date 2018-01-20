@@ -26,7 +26,9 @@ var router  = new VueRouter({
   routes:[
     {path:'/sell',component:sell},
     {path:'/my',component:my},
-    {path:'/buy',component:buy}
+    {path:'/buy',component:buy},
+    {path:'/update',component:{}},
+    {path:'/sifts',component:{}}
   ]
 })
 
