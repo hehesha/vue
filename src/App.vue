@@ -47,7 +47,7 @@ export default {}
     			display: block;
       }
       i{
-      	font-size: 0.52rem;
+      	font-size: 0.51rem;
       }
     }
 }
