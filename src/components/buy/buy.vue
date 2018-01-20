@@ -2,8 +2,8 @@
     <div>
         <heads></heads>
         <div id="nav" @click="incrementTotal">
-            <a href="#">上新</a>
-            <a href="#">精选</a>
+            <a href="#/buy">上新</a>
+            <a href="#/sifts">精选</a>
             <a href="#">女装</a>
             <a href="#">包袋</a>
             <a href="#">配饰</a>

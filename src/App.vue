@@ -3,15 +3,14 @@
     <router-view></router-view>
     <div class="app_title">
       <a class="app_btn" href="#/sell">
-        <i></i>
+        <mu-icon value="monetization_on" :size="42" color="#000"/>
         <span>卖出</span>
       </a>
       <a class="app_btn" href="#/buy">
-        <i></i>
         <span>购买</span>
       </a>
       <a class="app_btn" href="#/my">
-        <i></i>
+        <mu-icon value="account_circle" :size="42" color="#000" />
         <span>我的</span>
       </a>
     </div>
@@ -43,6 +42,12 @@ export default {}
       font-size: 24px;
       line-height: 100px;
     }
+}
+i{
+  vertical-align:middle;
+}
+a{
+  color:#000;
 }
 </style>
 
