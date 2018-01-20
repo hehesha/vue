@@ -3,14 +3,12 @@
     <router-view></router-view>
     <div class="app_title">
       <a class="app_btn" href="#/sell">
-        <mu-icon value="monetization_on" :size="42" color="#000"/>
         <span>卖出</span>
       </a>
       <a class="app_btn" href="#/buy">
         <span>购买</span>
       </a>
       <a class="app_btn" href="#/my">
-        <mu-icon value="account_circle" :size="42" color="#000" />
         <span>我的</span>
       </a>
     </div>
