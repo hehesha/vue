@@ -34,14 +34,14 @@ export default {}
     position: fixed;
     bottom: 0;
     
-    a{  
-        display: block;
-        flex:1;
-        float: left;
-        border-right: 1px solid #ccc;
-        text-align: center;
-        font-size: 24px;
-        line-height: 100px;
+    a{
+      display: block;
+      flex:1;
+      float: left;
+      border-right: 1px solid #ccc;
+      text-align: center;
+      font-size: 24px;
+      line-height: 100px;
     }
 }
 </style>

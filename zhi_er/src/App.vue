@@ -1,13 +1,10 @@
 <template>
-    <div>
-        卖出
-    </div>
+  <div id="app">
+   <router-view></router-view>
+  </div>
 </template>
 
 <script>
-import './sell.scss'
 export default {
-  
 }
 </script>
-
