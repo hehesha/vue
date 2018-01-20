@@ -1,5 +1,5 @@
 <template>
-    <div> 
+    <div>
         <div id="head">
             <div class="head_l">
                 <mu-icon value="notifications_none" :size="42" color="#000"/>
@@ -13,22 +13,23 @@
                 <mu-icon value="shopping_cart" :size="42"/>
             </div>
         </div>
-        <div id="nav">
-            <ul>
-                <li>上新</li>
-                <li>精选</li>
-                <li>女装</li>
-                <li>包袋</li>
-                <li>配饰</li>
-                <li>女鞋</li>
-            </ul>
-        </div>
+        
+        
     </div>
 </template>
 
 <script>
 import './buy.scss'
 export default {
-  
+
+    methods:{
+        incrementTotal:function(event){
+            if(event.target.tagName.toLowerCase()=='a'){
+                var a = event.target.parentNode.children;
+                event.target.style.borderBottom = '1px solid #ccc';
+
+            }
+    }
+  }
 }
 </script>
