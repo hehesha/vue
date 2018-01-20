@@ -23,6 +23,9 @@ import './css/common.css'
 export default {}
 </script>
 <style lang="scss">
+.app_head{
+  display: flex;
+}
 .app_title{
     height: 100px;
     width: 100%;
