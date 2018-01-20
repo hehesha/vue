@@ -1,6 +1,15 @@
 <template>
 	<div class="sellhead">
-		<mu-icon value="notifications none" />	
+		<ul class="clearfix">
+			<li>
+				<mu-icon value="notifications_none" />	
+			</li>
+			<li>
+				<span>只</span>
+                <span>二</span>
+			</li>
+		</ul>
+
 	</div>
 </template>
 

@@ -1,9 +1,99 @@
+#sellbox{
+    display: flex;
+    flex-direction: column;
+}
+//卖出页面的头部的样式
 .sellhead{
-        height: 2.44rem;
-        background-color:#F5F5F5 ;
-        display: flex;
+        background-color: #F5F5F5;
+        height:1.2rem;
         i{
-            font-size: 0.906666rem;
+            font-size: 0.56rem;
             
         }
+        ul{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        li{
+            float: left;
+                
+        }
+        li:nth-child(1){
+            margin-left: 0.346667rem;
+        }
+        li:nth-child(2){
+            font-size:0.56rem;
+            margin-left:-1.403333rem;
+        }
+        span{
+            display: block;
+            width: 0.48rem;
+            height: 0.48rem;
+            border-radius: 50%;
+            background: #000;
+            color: #fff;
+            float: left;
+            margin-right:0.133333rem;
+            font-size:0.32rem;
+            text-align: center
+        }
     }
+//卖出页面的内容部分
+.sellcontent{
+    flex: 1;
+    overflow-x: hidden;
+    .navbox{
+        background-color: #F5F5F5;
+        padding-top: 0.72rem;
+        display: flex;
+        justify-content: space-between;
+        li{
+            flex: 24.8%;
+            text-align: center;
+            i{
+                font-size: 1rem;   
+            }
+        }
+        span{
+            display: block;
+            font-size: 0.326666rem;
+            margin:0.373333rem 0 ;
+        }
+    }
+    .scib{
+        display: flex;
+        flex-direction: column;
+        p{
+          align-self: center; 
+          font-size: 0.3rem; 
+          
+        }
+        .p1{
+            background-color: #F99257;
+            color:#FFECD7 ;
+            font-size:0.4rem ;
+            width: 5.333333rem;
+            text-align: center;
+            
+            border-radius: 40%;
+            i{
+                color:#FFECD7 ;
+            }
+        }
+        .btn{
+            width: 5.333333rem;
+            height: 1.72rem;
+            font-size: 0.513333rem;
+            background-color:#FF5C01 ;
+            color: #FFFCED;
+            text-align: center;
+            line-height: 1.72rem;
+            
+            margin-top: 1.333333rem;
+            margin-bottom: 0.4rem;
+        }
+    }
+}
