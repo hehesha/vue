@@ -1,9 +1,6 @@
 <template>
-	<div>
-		
-			<mu-icon value="home"/>
-			
-	
+	<div class="sellhead">
+		<mu-icon value="notifications none" />	
 	</div>
 </template>
 
@@ -11,12 +8,13 @@
 	export default{
 		data(){
 			return{
-				value:"voice",
+				
 			}
 		},
 		
 	}
 </script>
 
-<style>
+<style lang="scss">
+	
 </style>
