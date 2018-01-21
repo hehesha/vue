@@ -19,6 +19,15 @@ import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
 Vue.use(MuseUI)
 
+// 引入mint-ui
+import { Swipe, SwipeItem } from 'mint-ui';
+import 'mint-ui/lib/style.css';
+Vue.use({ Swipe, SwipeItem });
+Vue.component(Swipe.name, Swipe);
+Vue.component(SwipeItem.name, SwipeItem);
+
+
+
 
 Vue.use(VueRouter);
 
