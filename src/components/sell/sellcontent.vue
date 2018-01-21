@@ -21,7 +21,7 @@
 		<!--scib就是sellcontent的img的box的意思-->
 		<div class="scib">
 			<img src="../../assets/s1.jpg" width="100%"/>
-			<p class="p1">一键读懂怎么卖闲置 <mu-icon value="help_outline"></mu-icon></p>
+			<p class="p1" @click="howToSell()">一键读懂怎么卖闲置 <mu-icon value="help_outline"></mu-icon></p>
 			<p class="btn">我要卖闲置</p>
 			<p>支持女装、包袋、配饰、女鞋四大品类，顺丰到付哦</p>
 		</div>
@@ -35,6 +35,12 @@
 				
 			}
 		},
+		methods:{
+//			howToSell:function(){}
+			howToSell(){
+				this.$router.push("howtosell");
+			},
+		}
 		
 	}
 </script>
