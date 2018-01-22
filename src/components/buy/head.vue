@@ -17,15 +17,29 @@
                 <mu-icon value="shopping_cart" :size="42"/>
             </div>
         </div>
-        
-        
+        <div id="nav" @click="incrementTotal">
+            <a href="#/sifts">上新</a>
+            <a href="#/buy">精选</a>
+            <a href="#">女装</a>
+            <a href="#">包袋</a>
+            <a href="#">配饰</a>
+            <a href="#">女鞋</a>
+        </div>   
     </div>
 </template>
 
 <script>
 import './buy.scss'
-export default {
-
-    
+export default {  
+    methods:{
+        incrementTotal:function(event){
+            var item = event.target.parentNode.children;
+            for(var i=0;i<item.length;i++){
+                item[i].style.borderBottom="";
+            }
+            event.target.style.borderBottom = "1px solid red";
+        }
+    }
+   
 }
 </script>

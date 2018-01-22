@@ -33,12 +33,9 @@
     overflow:hidden;
 }
 #main ul li{
-    flex:1;
+    width: 50%;
 }
-#main ul li p{
+#main ul li p,#main ul li span{
     font-size:0.306667rem;
 }
-#main ul li span{
-    font-size:0.24rem;
 
-}
