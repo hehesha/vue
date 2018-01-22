@@ -42,6 +42,7 @@
               </ul>              
             </div>
             <div class="shopping-board"></div>
+            
         </div>
     </div>
 </template>
@@ -49,7 +50,13 @@
 <script>
     import './selected.scss'
 export default {
-
+	data(){
+		return{
+			
+		}
+	},
+	
     
 }
+
 </script>
