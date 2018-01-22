@@ -2,7 +2,7 @@
 	<div class="sellcontent">
 		<div id="newsbox">
 			<ul>
-				<li>
+				<!--<li>
 					<h3>
 						<mu-icon value="date_range"></mu-icon>
 						<span>新用户红包</span>
@@ -11,15 +11,15 @@
 					<p>
 						888元新人红包来啦，有效期30天，还不快来看看。
 					</p>
-				</li>
-				<li>
+				</li>-->
+				<li v-for="(item,index) in datalist" :key="item.id">
 					<h3>
 						<mu-icon value="date_range"></mu-icon>
-						<span>新用户红包</span>
-						<span style="float: right;">2018-01-18 11:30</span>
+						<span>{{item.title}}</span>
+						<span style="float: right;">{{item.date}}</span>
 					</h3>
 					<p>
-						888元新人红包来啦，有效期30天，还不快来看看。
+						{{item.content}}
 					</p>
 				</li>
 			</ul>
@@ -31,9 +31,24 @@
 	export default{
 		data(){
 			return{
-				newdata:[]
+				datalist:[],
 			}
 		},
+		methods:{
+			
+		},
+		mounted:function(){
+			var self = this;
+			self.$axios({
+				url: "http://10.3.136.62:88/caution",
+			
+			}).then(function(res) {
+				console.log(res);
+				console.log(res.data.results)
+				self.datalist = (res.data.results);
+			})
+			
+		}
 		
 		
 	}
