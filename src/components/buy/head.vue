@@ -14,7 +14,9 @@
                 <a href="#/search">
                     <mu-icon value="search" :size="42"/>
                 </a>
-                <mu-icon value="shopping_cart" :size="42"/>
+                <a href="#/car">
+                    <mu-icon value="shopping_cart" :size="42"/>
+                </a>
             </div>
         </div>
         <div id="nav" @click="incrementTotal">
