@@ -1,3 +1,10 @@
+#yl_sift i{
+  vertical-align:middle;
+}
+
+#yl_sift a{
+  color:#000;
+}
 #sift{
     display:flex;
     justify-content:space-between;
@@ -16,4 +23,22 @@
     line-height:1.12rem;
     font-size:0.293333rem;
     margin-right:0.96rem;
+}
+#main ul li img{
+    width: 350px;
+}
+#main ul{
+    display:flex;
+    flex-wrap:wrap;
+    overflow:hidden;
+}
+#main ul li{
+    flex:1;
+}
+#main ul li p{
+    font-size:0.306667rem;
+}
+#main ul li span{
+    font-size:0.24rem;
+
 }
