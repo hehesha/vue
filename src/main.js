@@ -28,7 +28,9 @@ Vue.use({ Swipe, SwipeItem });
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
 
-
+//zby引入jquery
+import $ from "jquery";
+window.$ = window.jQuery = $ ;
 
 
 //zby:使用轮播图
