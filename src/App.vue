@@ -41,6 +41,7 @@ export default {}
       border-right: 1px solid #ccc;
       text-align: center;
       font-size: 24px;
+      z-index: 0;
       //line-height: 100px;
 
       /*line-height: 100px;*/

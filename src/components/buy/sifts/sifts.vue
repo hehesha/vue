@@ -15,19 +15,17 @@
         </div>
         <div id="main">
             <ul>
-                <li v-for="(value,key) in dataset" :key="key" @click.stop="aa(key)">
-                    <a href="#/detail">
-                        <img :src="value.goods_pto">
-                        <div style="text-align:center">
-                            <p>{{value.goods_trademark}}</p>
-                            <p>{{value.goods_name}}</p>
-                            <p>{{value.size}}</p>
-                            <p>
-                                <span style="color:#E98345">￥{{value.sell_price}}</span>
-                                <span style="text-decoration:line-through">{{value.sell_prices}}</span>
-                            </p>
-                        </div>
-                    </a>
+                <li v-for="(value,key) in dataset" :key="key" @click="aa(key)" :id="value.id">
+                    <img :src="value.goods_pto">
+                    <div style="text-align:center">
+                        <p>{{value.goods_trademark}}</p>
+                        <p>{{value.goods_name}}</p>
+                        <p>{{value.size}}</p>
+                        <p>
+                            <span style="color:#E98345">￥{{value.sell_price}}</span>
+                            <span style="text-decoration:line-through">{{value.sell_prices}}</span>
+                        </p>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -63,10 +61,8 @@
             },
             aa:function(key){
                 var key = key+1;
-                console.log(key)
-                axios.get('http://10.3.136.62:88/detail',{params: {id: key}}).then(function (response) {
-                    
-                })
+                location.href ='http://localhost:8080/#/detail?id='+key;
+                
             }
         }
     }

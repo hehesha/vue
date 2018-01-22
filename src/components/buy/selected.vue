@@ -1,5 +1,6 @@
 <template>
     <div>
+
         <banner></banner>
         <shows></shows>
         <Jsection></Jsection>
@@ -8,6 +9,7 @@
 </template>
 
 <script>
+    
     import banner from './banner.vue';
     import shows from './show.vue';
     import Jsection from './Jsection.vue';
