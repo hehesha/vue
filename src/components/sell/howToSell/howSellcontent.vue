@@ -104,10 +104,12 @@
 			</div>
 
 		</div>
+		
 	</div>
 </template>
 
 <script>
+	
 	import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 	export default {
@@ -125,7 +127,8 @@
 					},
 					autoplay: 2000,
 					speed: 500,
-				}
+				},
+				popupVisible:true
 			}
 		},
 		//一入页面执行的函数，放这里
@@ -142,7 +145,8 @@
 		},
 		components: {
 			swiper,
-			swiperSlide
+			swiperSlide,
+			
 		},
 
 	}
