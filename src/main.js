@@ -14,6 +14,7 @@ import sell from './components/sell.vue';
 import my from './components/my/my.vue';
 import buy from './components/buy/buy.vue';
 import howToSell from'./components/sell/howToSell.vue';
+import news from './components/sell/news.vue';
 
 //zby：引入Muse-Ui
 import MuseUI from 'muse-ui'
@@ -49,7 +50,8 @@ var router  = new VueRouter({
     {path:'/my',component:my},
     {path:'/buy',component:buy},
     {path:'/update',component:{}},
-    {path:'/sifts',component:{}}
+    {path:'/sifts',component:{}},
+    {path:'/news',component:news},
   ]
 })
 
@@ -58,3 +60,12 @@ new Vue({
   router,
   render: h => h(App)
 })
+
+
+
+
+
+
+//zby全局使用axios
+
+
