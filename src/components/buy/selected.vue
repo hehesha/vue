@@ -1,7 +1,7 @@
 <template>
     <div>
         <banner></banner>
-        <shows></shows>
+        <shows api="http://10.3.136.62:88/sample"></shows>
         <Jsection></Jsection>
     </div>
 

@@ -49,14 +49,20 @@
 
 <script>
     import './selected.scss'
-export default {
+    import axios from 'axios'
+  export default {
 	data(){
 		return{
 			
 		}
 	},
-	
-    
+	props: ['api'],
+  beforeMount(){
+              
+    axios.get(this.api).then(res => {
+                console.log(res);
+           })
+  }
 }
 
 </script>

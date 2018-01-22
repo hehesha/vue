@@ -13,7 +13,9 @@ window.Vue = Vue;
 import sell from './components/sell.vue';
 import my from './components/my/my.vue';
 import buy from './components/buy/buy.vue';
+import message from './components/message/message.vue';
 import howToSell from'./components/sell/howToSell.vue';
+import search from './components/search/search.vue';
 
 //zby：引入Muse-Ui
 import MuseUI from 'muse-ui'
@@ -49,7 +51,9 @@ var router  = new VueRouter({
     {path:'/my',component:my},
     {path:'/buy',component:buy},
     {path:'/update',component:{}},
-    {path:'/sifts',component:{}}
+    {path:'/sifts',component:{}},
+    {path:'/message',component:message},
+    {path:'/search',component:search}
   ]
 })
 
