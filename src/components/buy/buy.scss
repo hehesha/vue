@@ -42,10 +42,14 @@
     text-align: center
 }
 
-#goods i{
-  vertical-align:middle;
+#banner ul li{
+    background:url('../../assets/banner.jpg') no-repeat;
+    background-position:center;
+    height:400px;
 }
-
 #goods a{
-  color:#000;
+    color:#000;
+}
+#goods i{
+    vertical-align:middle;
 }
