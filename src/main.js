@@ -17,8 +17,8 @@ import sifts from './components/buy/sifts/sifts.vue'
 import buy from './components/buy/buy.vue';
 import howToSell from'./components/sell/howToSell.vue';
 import news from './components/sell/news.vue';
-import detail from'./components/buy/detail/detail.vue';
-
+import detail from './components/buy/detail/detail.vue';
+import topush from './components/sell/topush.vue'
 
 //zby：引入Muse-Ui
 import MuseUI from 'muse-ui'
@@ -57,7 +57,8 @@ var router  = new VueRouter({
     {path:'/sifts',component:{}},
     {path:'/news',component:news},
     {path:'/sifts',component:sifts},
-    {path:'/detail',component:detail}
+    {path:'/detail',component:detail},
+    {path:'/topush',component:topush},
   ]
 })
 
