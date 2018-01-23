@@ -62,7 +62,6 @@
             },
             aa:function(key){
                 var key = key+1;
-                console.log(key)
                 location.href ='http://localhost:8080/#/detail?id='+key;
                 
             }

@@ -5,7 +5,7 @@
             <div class="c_title">
               <span>
                   <a href="#">
-                      <mu-icon value="navigate_before" :size="42" color="#000"/>
+                      <mu-icon value="navigate_before" :size="42" color="#000"  @click='$router.go(-1)'/>
                   </a>
               </span>
               <h2>购物车</h2>
@@ -16,77 +16,18 @@
             </div>
         </div>
         <ul class="c_goods">
-            <li>
+            <li  @click="" v-for="(value,key) in dataset">
               <mu-checkbox class="demo-checkbox"/>
-              <span class="pic">
-                  <span class="cover">72小时可退</span>
+                <img :src="value.goods_pto" class="pic">
               </span>
-              <div class="c_content">
-                <h3>Eifini</h3>
-                <h4>低调轻奢名媛范</h4>
-                <p>羊毛系腰气质妮子大衣<span>M码</span></p>
-                <h5><b>￥968</b><s>￥1980</s></h5>
-              </div>
-            </li>
-            <li>
-              <mu-checkbox class="demo-checkbox"/>
-              <span class="pic">
-                  <span class="cover">72小时可退</span>
-              </span>
-              <div class="c_content">
-                <h3>Eifini</h3>
-                <h4>低调轻奢名媛范</h4>
-                <p>羊毛系腰气质妮子大衣<span>M码</span></p>
-                <h5><b>￥968</b><s>￥1980</s></h5>
-              </div>
-            </li>
-            <li>
-              <mu-checkbox class="demo-checkbox"/>
-              <span class="pic">
-                  <span class="cover">72小时可退</span>
-              </span>
-              <div class="c_content">
-                <h3>Eifini</h3>
-                <h4>低调轻奢名媛范</h4>
-                <p>羊毛系腰气质妮子大衣<span>M码</span></p>
-                <h5><b>￥968</b><s>￥1980</s></h5>
-              </div>
-            </li>
-            <li>
-              <mu-checkbox class="demo-checkbox"/>
-              <span class="pic">
-                  <span class="cover">72小时可退</span>
-              </span>
-              <div class="c_content">
-                <h3>Eifini</h3>
-                <h4>低调轻奢名媛范</h4>
-                <p>羊毛系腰气质妮子大衣<span>M码</span></p>
-                <h5><b>￥968</b><s>￥1980</s></h5>
-              </div>
-            </li>
-            <li>
-              <mu-checkbox class="demo-checkbox"/>
-              <span class="pic">
-                  <span class="cover">72小时可退</span>
-              </span>
-              <div class="c_content">
-                <h3>Eifini</h3>
-                <h4>低调轻奢名媛范</h4>
-                <p>羊毛系腰气质妮子大衣<span>M码</span></p>
-                <h5><b>￥968</b><s>￥1980</s></h5>
-              </div>
-            </li>
-            <li>
-              <mu-checkbox class="demo-checkbox"/>
-              <span class="pic">
-                  <span class="cover">72小时可退</span>
-              </span>
-              <div class="c_content">
-                <h3>Eifini</h3>
-                <h4>低调轻奢名媛范</h4>
-                <p>羊毛系腰气质妮子大衣<span>M码</span></p>
-                <h5><b>￥968</b><s>￥1980</s></h5>
-              </div>
+              <a href="#">
+                <div class="c_content">
+                  <h3>{{value.goods_trademark}}</h3>
+                  <h4>{{value.goods_name}}</h4>
+                  <p>{{value.title_name}}<span>{{value.size}}</span></p>
+                  <h5><b>{{value.sell_price}}</b><s>{{value.sell_prices}}</s></h5>
+                </div>
+              </a>
             </li>
         </ul>
           <div class="c_footer">
@@ -108,16 +49,22 @@
   export default {
     data(){
         return{
-            
+            dataset:[],
         }
     },
-    props: ['api'],
-  beforeMount(){
-              
-    //axios.get(this.api).then(res => {
-               // console.log(res);
-           //})
-  }
+    methods:{
+
+    },
+    beforeMount(){
+      var self = this;
+      axios.get('http://10.3.136.62:88/getorder').then(function (response) {
+          var item = response.data.data.results;
+          item.forEach(function(ss){
+            var bb = JSON.parse(ss.goods_detail)
+            self.dataset.push(bb);
+          })
+      })
+    }
 }
 
 </script>
