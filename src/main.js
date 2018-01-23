@@ -10,7 +10,7 @@ import Vuex from 'vuex'
 //zby:为了在全局环境中使用vue
 window.Vue = Vue;
 
-
+//引入组件的位置
 import sell from './components/sell.vue'
 import my from './components/my/my.vue'
 import sifts from './components/buy/sifts/sifts.vue'
@@ -19,11 +19,14 @@ import message from './components/message/message.vue';
 import howToSell from'./components/sell/howToSell.vue';
 import search from './components/search/search.vue';
 import news from './components/sell/news.vue';
-import detail from'./components/buy/detail/detail.vue';
+import detail from './components/buy/detail/detail.vue';
+import topush from './components/sell/topush.vue';
 import car from './components/car/car.vue';
+
 import girlclothes from './components/buy/girlclothes/girlclothes.vue';
 import shoes from './components/buy/shoes/shoes.vue';
 import accessory from './components/buy/accessory/accessory.vue';
+import advice from './components/advice/advice.vue'
 
 
 
@@ -56,19 +59,23 @@ Vue.use(VueRouter);
 
 var router  = new VueRouter({
   routes:[
-    {path:'/sell',component:sell},
-    {path:'/howtosell',component:howToSell},
+    {path:'/sell',component:sell,name:'卖出页面主键'},
+    {path:'/howtosell',component:howToSell,name:'卖出教学'},
     {path:'/my',component:my},
     {path:'/buy',component:buy},
     {path:'/girlclothes',component:girlclothes},
-    {path:'/message',component:message},
+    // {path:'/message',component:message},
+    {path:'/update',component:{}},
+
     {path:'/search',component:search},
-    {path:'/news',component:news},
+    {path:'/news',component:news,name:'信息接受页面'},
     {path:'/sifts',component:sifts},
     {path:'/detail',component:detail},
     {path:'/car',component:car},
     {path:'/shoes',component:shoes},
-    {path:'/accessory',component:accessory}
+    {path:'/accessory',component:accessory},
+    {path:'/topush',component:topush,name:'商品提交页面'},
+		{path:'/advice',component:advice,name:'品牌建议'}
   ]
 })
 

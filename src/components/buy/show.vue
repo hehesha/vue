@@ -11,37 +11,47 @@
                   <h3>真人展示</h3>
                   <h4>单品种草推荐</h4>
                   <p><a>去看看></a></p>
-                  <span></span>
+                  <span>
+                    <img src="../../assets/goodlist1.jpg"/>
+                  </span>
               </li>
               <li>
-                  <h3>真人展示</h3>
-                  <h4>单品种草推荐</h4>
+                  <h3>博主专区</h3>
+                  <h4>她们都在只二</h4>
                   <p><a>去看看></a></p>
-                  <span></span>
+                  <span>
+                    <img src="../../assets/goodlist3.jpg"/>
+                  </span>
               </li>
               <li>
-                  <h3>真人展示</h3>
-                  <h4>单品种草推荐</h4>
+                  <h3>全新专区</h3>
+                  <h4>谁说精致会吃土</h4>
                   <p><a>去看看></a></p>
-                  <span></span>
+                  <span>
+                    <img src="../../assets/goodlist5.jpg"/>
+                  </span>
               </li>
               <li>
-                  <h3>真人展示</h3>
-                  <h4>单品种草推荐</h4>
+                  <h3>特惠专场</h3>
+                  <h4>超强折扣 低至一折</h4>
                   <p><a>去看看></a></p>
-                  <span></span>
+                  <span>
+                    <img src="../../assets/goodlist7.jpg"/>
+                  </span>
               </li>
             </ul>
             <div class="show_brand clearfix">
               <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li><img src="../../assets/j_sc1.png"/></li>
+                <li><img src="../../assets/j_sc2.png"/></li>
+                <li><img src="../../assets/j_sc3.png"/></li>
+                <li><img src="../../assets/j_sc4.png"/></li>
+                <li><img src="../../assets/j_sc5.png"/></li>
               </ul>              
             </div>
-            <div class="shopping-board"></div>
+            <div class="shopping-board clearfix">
+              <img src="../../assets/j_buybuybuy.png"/>
+            </div>
             
         </div>
     </div>
@@ -62,6 +72,19 @@
     axios.get(this.api).then(res => {
                 console.log(res);
            })
+  },
+  mounted(){
+      //设置ul的宽度
+      //var $li=$('.show_brand li');
+      //console.log('li',$li);
+      //var baseWidth=$($li[0]).outerWidth(true);
+      //.log(baseWidth);
+      //console.log(baseWidth*$li.length);
+      //var ulWidth=baseWidth*$li.length+'rem';
+      //console.log(ulWidth);
+      //console.log($('.show_brand ul').get(0));
+      //$('.show_brand ul').get(0).style.width=ulWidth;
+      
   }
 }
 
