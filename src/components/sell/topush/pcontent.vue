@@ -70,10 +70,10 @@
 				<p class="advice">品牌建议</p>
 				<button @click="open('top')">下一步</button>
 				
-				
 			</mu-content-block>
   		</mu-popup>
   		<!--第三步-->
+  		
 	</div>
 </template>
 
