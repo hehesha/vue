@@ -120,6 +120,23 @@
     padding-left: 70px;
     font-weight:normal;
 }
-.messages li{
+.messages ul li{
     padding-left:120px;
+}
+.messages_b{
+    font-size:26px;
+}
+.messages_b p{
+    height:90px;
+    line-height:90px;
+    padding-left:34px;
+    border-top:12px solid #F5F5F5;
+    border-bottom:1px solid #ccc;
+}
+.messages_b div{
+    margin-top:30px;
+}
+.messages_b div span:first-child{
+    padding: 0 15px 0 34px;
+    font-weight:bold;
 }

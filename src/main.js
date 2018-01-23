@@ -21,6 +21,9 @@ import search from './components/search/search.vue';
 import news from './components/sell/news.vue';
 import detail from'./components/buy/detail/detail.vue';
 import car from './components/car/car.vue';
+import girlclothes from './components/buy/girlclothes/girlclothes.vue';
+import shoes from './components/buy/shoes/shoes.vue';
+import accessory from './components/buy/accessory/accessory.vue';
 
 
 
@@ -57,13 +60,15 @@ var router  = new VueRouter({
     {path:'/howtosell',component:howToSell},
     {path:'/my',component:my},
     {path:'/buy',component:buy},
-    {path:'/update',component:{}},
+    {path:'/girlclothes',component:girlclothes},
     {path:'/message',component:message},
     {path:'/search',component:search},
     {path:'/news',component:news},
     {path:'/sifts',component:sifts},
     {path:'/detail',component:detail},
-    {path:'/car',component:car}
+    {path:'/car',component:car},
+    {path:'/shoes',component:shoes},
+    {path:'/accessory',component:accessory}
   ]
 })
 

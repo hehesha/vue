@@ -20,12 +20,12 @@
             </div>
         </div>
         <div id="nav" @click="incrementTotal">
-            <a href="#/sifts">上新</a>
+            <a href="#">上新</a>
             <a href="#/buy">精选</a>
-            <a href="#">女装</a>
-            <a href="#">包袋</a>
-            <a href="#">配饰</a>
-            <a href="#">女鞋</a>
+            <a href="#/girlclothes">女装</a>
+            <a href="#/sifts">包袋</a>
+            <a href="#/accessory">配饰</a>
+            <a href="#/shoes">女鞋</a>
         </div>   
     </div>
 </template>
