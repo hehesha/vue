@@ -3,7 +3,7 @@
 
         <banner></banner>
         <shows api="http://10.3.136.62:88/sample"></shows>
-        <Jsection></Jsection>
+        <Jsection a_api="http://10.3.136.62:88/activity" g_api="http://10.3.136.62:88/sample"></Jsection>
     </div>
 
 </template>
