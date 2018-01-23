@@ -31,9 +31,11 @@
     display:flex;
     flex-wrap:wrap;
     overflow:hidden;
+    padding-left:15px;
 }
 #main ul li{
     width: 50%;
+    margin-top: 25px;
 }
 #main ul li p,#main ul li span{
     font-size:0.306667rem;

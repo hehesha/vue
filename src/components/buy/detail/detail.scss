@@ -46,7 +46,7 @@
 .goods_foot_t span{
     text-decoration: line-through;
     color:#ccc;
-    font-size:26px;
+    font-size:0.346667rem;
 }
 .goods_foot_t b{
     color:#000;
@@ -75,7 +75,7 @@
 }
 .shops{
     text-align: center;
-    line-height:96px;
+    line-height:1.28rem;
     color:#fff;
     font-size:0.4rem;
     width:7.786667rem;
@@ -103,23 +103,40 @@
     font-size:0.373333rem;
 }
 .messages{
-    font-size:26px;
+    font-size:0.346667rem;
 }
 .messages span{
-    height:92px;
-    line-height:92px;
+    height:1.24rem;
+    line-height:1.24rem;
     display:block;
-    border-bottom:1px solid #E6E6E6;
-    padding-left: 32px;
+    border-bottom:0.013333rem solid #E6E6E6;
+    padding-left: 0.426667rem;
 }
 .messages tr{
     font-weight:bold;
-    height:90px;
+    height:1.2rem;
 }
 .messages td{
-    padding-left: 70px;
+    padding-left: 0.933333rem;
     font-weight:normal;
 }
-.messages li{
-    padding-left:120px;
+.messages ul li{
+    padding-left:1.6rem;
+}
+.messages_b{
+    font-size:0.346667rem;
+}
+.messages_b p{
+    height:1.2rem;
+    line-height:1.2rem;
+    padding-left:0.453333rem;
+    border-top:0.16rem solid #F5F5F5;
+    border-bottom:0.013333rem solid #ccc;
+}
+.messages_b div{
+    margin-top:0.4rem;
+}
+.messages_b div span:first-child{
+    padding: 0 0.2rem 0 0.453333rem;
+    font-weight:bold;
 }

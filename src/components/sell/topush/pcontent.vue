@@ -32,16 +32,19 @@
 						</li>
 					</ul>
 				</div>
-				<p>选择宝贝的类别</p>
+				<div class="sellcontent">
+					
+					<p>选择宝贝的类别</p>
+					<ul>
+						<li 
+						v-for="(list,index) in list"  
+						class="item"  
+						:class="{'active':ind === index}" 
+						@click="active(index,list)">{{list}}</li>
+					</ul>
+					<button @click="open('right')">下一步</button>
+				</div>
 				
-				<ul>
-					<li 
-					v-for="(list,index) in list"  
-					class="item"  
-					:class="{'active':ind === index}" 
-					@click="active(index,list)">{{list}}</li>
-				</ul>
-				<button @click="open('right')">下一步</button>
 			</mu-content-block>
 		</mu-popup>
 		
@@ -49,11 +52,43 @@
 		<mu-popup position="right" popupClass="demo-popup-right" :open="rightPopup" @close="close('right')">
     		<!--<mu-raised-button label="关闭弹框" @click="close('right')" primary fullWidth/>-->
 			<mu-content-block>
-				<div class="sellhead" >
-					<ul class="clearfix " style="display: block;">
+				
+					<div class="sellhead" >
+						<ul class="clearfix " style="display: block;">
+							<li style="float: left;">
+						
+								<mu-icon value="keyboard_arrow_left" @click="close('right')"></mu-icon>
+								
+							</li>
+							<li style="float: right;">
+								<mu-icon value="help" @click="$router.push('howtosell')"></mu-icon>
+				
+							</li>
+						</ul>
+					</div>
+					<div class="sellcontent">
+						<p>填写品牌</p>
+						<p id="choosebox">
+							<input type="text" placeholder="只二现已接受3000+国内国外知名品牌" style="display: block;" id="choose" v-model="goods_trademark" @blur="trademark()"/>
+						
+						</p>
+						<p class="advice" @click="$router.push('advice')">品牌建议</p>
+						<button @click="open('top')">下一步</button>
+						
+					</div>
+					
+				
+				
+			</mu-content-block>
+  		</mu-popup>
+  		<!--第三步-->
+  		<mu-popup position="top"  :open="topPopup">
+  			
+			<div class="sellhead">
+				<ul class="clearfix " style="display: block;">
 						<li style="float: left;">
 					
-							<mu-icon value="keyboard_arrow_left" @click="close('right')"></mu-icon>
+							<mu-icon value="keyboard_arrow_left" @click="close('top')"></mu-icon>
 							
 						</li>
 						<li style="float: right;">
@@ -61,23 +96,38 @@
 			
 						</li>
 					</ul>
-				</div>
-				<p>填写品牌</p>
-				<p id="choosebox">
-					<input type="text" placeholder="只二现已接受3000+国内国外知名品牌" style="display: block;" id="choose" v-model="goods_trademark" @blur="trademark()"/>
-					
+			</div>
+			<div class="sellcontent">
+				<p style="margin: 2.666666rem 0;color: #CCCCCC;" v-show="isShow">
+					选择宝贝的照片
 				</p>
-				<p class="advice">品牌建议</p>
-				<button @click="open('top')">下一步</button>
+				<p style="margin: 0.900666rem 0;color: #CCCCCC;" v-show="!isShow">
+					<img style="height: 4.333333rem;" :src="imgUrl"/>
+				</p>
+				<p style="border: 0.113333rem solid #CCCCCC; width: 7rem;margin-left: 15%;padding: 10%;" @click="open('left')">
+					<mu-icon value="camera_alt" style="font-size: 0.8rem;"></mu-icon>
+				</p>
+				<button @click="postGoods()">保存</button>
+			</div>
+			 <mu-popup position="left" popupClass="demo-popup-left" :open="leftPopup" @close="close('left')">
+    			
+				<div class="imgbox">
+					<!--<img src="../../../assets/goodlist.jpg"/>
+		    		<img src="../../../assets/goodlist6.jpg"/>
+		    		<img src="../../../assets/text1.jpg"/>-->
+		    		<!--错误的写法：<img src="{{imgUrl}}">-->
+					<img v-for="(url,index) in imgUrls " :src="url" @click="pro(url,index)" :class="{'active':ind === index}"/>
+				</div>
+				<button  @click="close('left')">返回上一级</button>
 				
-			</mu-content-block>
+  			</mu-popup>
   		</mu-popup>
-  		<!--第三步-->
-  		
 	</div>
 </template>
 
 <script>
+	import qs from 'qs'
+	
 	export default {
 		data() {
 			return {
@@ -89,6 +139,14 @@
 				list:['女装','包袋','女鞋','配饰'],
 				ind:'',
 				goods_trademark:'',
+				imgUrls:[
+				"https://m.dior.cn/couture/ecommerce/media/catalog/product/cache/1/zoom_alt_image_1/x634/17f82f742ffe127f42dca9de82fb58b1/M/0/1515500783_M0598CVXN_M911_E01_Z.jpg",
+				"https://www.dior.cn/couture/var/dior/storage/images/joaillerie-horlogerie/push-joaillerie/11700888-54-chi-CN/珠宝_width_440.jpg",
+				"https://www.dior.cn/couture/var/dior/storage/images/parfum-beaute/push_produit/11796358-178-chi-CN/push_produit_width_440.jpg",
+				"https://m.dior.cn/couture/var/dior/storage/images/joaillerie/nouveautes/collections-joaillieres2/8884915-55-chi-CN/珠宝系列_reference.jpg"
+				],
+				isShow:true,
+				imgUrl:'',
 			}
 		},
 		methods: {
@@ -109,13 +167,44 @@
 				this.goodlist.goods_trademark = this.goods_trademark;
 				console.log(this.goodlist)
 				
+			},
+			//选择商品照片
+			pro(url,index){
+				this.ind = index;
+				this.goodlist.goods_pto = url;
+				console.log(this.goodlist)
+				this.close('left')
+				this.showimg(url)
+			},
+			//显示保存的图片
+			showimg(url){
+				this.isShow = false;
+				this.imgUrl = url;
+				console.log(url)
+			},
+			postGoods(){
+				console.log(123);
+				this.$router.push("sell");
+				var self = this;
+				self.$axios({
+					method:'POST',
+					url:"http://10.3.136.62:88/sell",
+					data:qs.stringify(this.goodlist),
+					 headers:{'Content-Type': "application/x-www-form-urlencoded"}
+				}).catch(function(err){
+					console.log(err);
+				})
 			}
 		},
 		mounted:function(){
 			
 
 			
+		},
+		components:{
+			
 		}
+		
 	}
 </script>
 
@@ -197,6 +286,7 @@
     }
 }
 .mu-popup{
+	width: 100%;
 	p{
 		font-size: 0.56rem;
 		text-align: center;
@@ -219,9 +309,11 @@
 		font-size: 0.56rem;
 		padding: 0.4rem;
 		position: relative;
-		left: 70%;
+		width: 4rem;
 		margin-top: 3.8rem;
 		margin-bottom:0.8rem ;
+		align-self: left;
+		
 	}
 	
 	.advice{
@@ -229,7 +321,7 @@
 		border: 0.013333rem solid #333333;
 		width: 8.333333rem;
 		transform: translateX(0.733333rem);
-		margin: 1.333333rem 0rem;
+		margin: 0.8333333rem 0rem;
 		
 	}
 	#choose{
@@ -245,5 +337,20 @@
 	border-bottom: 0.013333rem solid #CCCCCC;
 	margin: 1.533333rem 0;
 	
+}
+.imgbox{
+	width: 8rem;
+	overflow-x: hidden;
+	padding-left: 1.4rem;
+	padding-top: 3rem;
+	img{
+		
+		width: 3rem;
+		margin: 0.133333rem;
+	}
+	img.active{
+		box-sizing: border-box;
+		border:0.026666rem solid #FD5C02;
+	}
 }
 </style>
