@@ -2,9 +2,7 @@
 	<div class="sellhead">
 		<ul class="clearfix Nav0">
 			<li>
-				<a href="#/sell">
-					<mu-icon value="keyboard_arrow_left"></mu-icon>
-				</a>
+					<mu-icon value="keyboard_arrow_left" @click = "$router.go(-1)"></mu-icon>
 			</li>
 			<li>
 				<span>消息提示</span>

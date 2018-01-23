@@ -2,7 +2,7 @@
     <div>
         <div id="head">
             <div class="head_l">
-                <a href="#/message">
+                <a href="#/news">
                     <mu-icon value="notifications_none" :size="42" color="#000"/>
                 </a>
             </div>
