@@ -41,7 +41,9 @@
                 <li></li>
               </ul>              
             </div>
-            <div class="shopping-board"></div>
+            <div class="shopping-board clearfix">
+              <img src="../../assets/j_buybuybuy.png"/>
+            </div>
             
         </div>
     </div>
@@ -65,11 +67,16 @@
   },
   mounted(){
       //设置ul的宽度
-      var $li=$('.show_brand li');
-      console.log('li',$li);
-      //var baseWidth=$($li[0]).outWidth(true);
-      console.log($($li[0]));
-      //$('show_bottom ul').css('Width',baseWidth*$li.length);
+      //var $li=$('.show_brand li');
+      //console.log('li',$li);
+      //var baseWidth=$($li[0]).outerWidth(true);
+      //.log(baseWidth);
+      //console.log(baseWidth*$li.length);
+      //var ulWidth=baseWidth*$li.length+'rem';
+      //console.log(ulWidth);
+      //console.log($('.show_brand ul').get(0));
+      //$('.show_brand ul').get(0).style.width=ulWidth;
+      
   }
 }
 

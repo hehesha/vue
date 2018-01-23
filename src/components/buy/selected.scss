@@ -82,7 +82,7 @@
     height:2.293333rem;
     overflow-x:auto;
     ul{
-        width:28.333333rem;
+        width:19.2rem;
         position:absolute;
 
         li{
@@ -98,8 +98,13 @@
     height: 4.106667rem;
     background:skyblue;
     margin-top:0.826667rem;
+    img{
+        width: 100%;
+        float:left;
+    }
 }
 .Jsection{
+    margin-top:0.4rem;
     dl{
         h3{
             font-size:0.346667rem;
@@ -121,7 +126,7 @@
             overflow-x:auto;
             ul{
                 margin-top:0.346667rem;
-                width:300%;
+                width:30.72rem;
                 li{
                     width:3.333333rem;
                     height:5.066667rem;
