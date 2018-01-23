@@ -62,6 +62,14 @@
     axios.get(this.api).then(res => {
                 console.log(res);
            })
+  },
+  mounted(){
+      //设置ul的宽度
+      var $li=$('.show_brand li');
+      console.log('li',$li);
+      //var baseWidth=$($li[0]).outWidth(true);
+      console.log($($li[0]));
+      //$('show_bottom ul').css('Width',baseWidth*$li.length);
   }
 }
 
