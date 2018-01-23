@@ -2,10 +2,15 @@
     <div>
       <div id="banner">
            <mt-swipe :auto="5000" class="b_ul">
-                  <mt-swipe-item class="b_one pic">1</mt-swipe-item>
-                  <mt-swipe-item class="b_two pic">2</mt-swipe-item>
-                  <mt-swipe-item class="b_three pic">3</mt-swipe-item>
-                  <mt-swipe-item class="b_four pic">4</mt-swipe-item>
+                  <mt-swipe-item class="b_one pic">
+                    <img src="../../assets/banner1.png"/>
+                  </mt-swipe-item>
+                  <mt-swipe-item class="b_two pic">
+                    <img src="../../assets/banner2.png"/>
+                  </mt-swipe-item>
+                  <mt-swipe-item class="b_three pic">
+                    <img src="../../assets/banner3.png"/>
+                  </mt-swipe-item>
             </mt-swipe>
         </div>
     </div>
