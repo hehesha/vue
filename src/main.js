@@ -22,6 +22,10 @@ import news from './components/sell/news.vue';
 import detail from './components/buy/detail/detail.vue';
 import topush from './components/sell/topush.vue';
 import car from './components/car/car.vue';
+
+import girlclothes from './components/buy/girlclothes/girlclothes.vue';
+import shoes from './components/buy/shoes/shoes.vue';
+import accessory from './components/buy/accessory/accessory.vue';
 import advice from './components/advice/advice.vue'
 
 
@@ -59,14 +63,18 @@ var router  = new VueRouter({
     {path:'/howtosell',component:howToSell,name:'卖出教学'},
     {path:'/my',component:my},
     {path:'/buy',component:buy},
+    {path:'/girlclothes',component:girlclothes},
+    // {path:'/message',component:message},
     {path:'/update',component:{}},
-    
+
     {path:'/search',component:search},
     {path:'/news',component:news,name:'信息接受页面'},
     {path:'/sifts',component:sifts},
     {path:'/detail',component:detail},
-    {path:'/topush',component:topush,name:'商品提交页面'},
     {path:'/car',component:car},
+    {path:'/shoes',component:shoes},
+    {path:'/accessory',component:accessory},
+    {path:'/topush',component:topush,name:'商品提交页面'},
 		{path:'/advice',component:advice,name:'品牌建议'}
   ]
 })
