@@ -17,11 +17,10 @@ import sifts from './components/buy/sifts/sifts.vue'
 import buy from './components/buy/buy.vue';
 import message from './components/message/message.vue';
 import howToSell from'./components/sell/howToSell.vue';
-
 import search from './components/search/search.vue';
-
 import news from './components/sell/news.vue';
 import detail from'./components/buy/detail/detail.vue';
+import car from './components/car/car.vue';
 
 
 
@@ -63,7 +62,8 @@ var router  = new VueRouter({
     {path:'/search',component:search},
     {path:'/news',component:news},
     {path:'/sifts',component:sifts},
-    {path:'/detail',component:detail}
+    {path:'/detail',component:detail},
+    {path:'/car',component:car}
   ]
 })
 
