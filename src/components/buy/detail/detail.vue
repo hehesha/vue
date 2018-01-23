@@ -7,7 +7,7 @@
                 <mu-icon value="shopping_cart"></mu-icon>
             </a>
         </div>
-        <div id="goods_main">
+        <div id="goods_main" v-if="b[0]">
             <div style="text-align:center;"><img :src="b[0].goods_pto"></div>
             <div id="goods_foot">
             <div class="goods_foot_t">
@@ -84,7 +84,7 @@
             var self = this;
             var bb = location.hash.split('?')[1].split('=')[1];
             axios.get('http://10.3.136.62:88/detail',{params: {id: bb}}).then(function (response) {
-                 self.b = response.data.data.results
+                 self.b = response.data.data.results;
             })
         }
     }

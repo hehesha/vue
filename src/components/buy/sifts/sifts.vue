@@ -15,7 +15,7 @@
         </div>
         <div id="main">
             <ul>
-                <li v-for="(value,key) in dataset" :key="key" @click="aa(key)" :id="value.id">
+                <li v-for="(value,key) in dataset" :key="key" @click="aa(key)">
                     <img :src="value.goods_pto">
                     <div style="text-align:center">
                         <p>{{value.goods_trademark}}</p>

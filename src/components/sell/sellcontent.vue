@@ -40,6 +40,9 @@
 			howToSell(){
 				this.$router.push("howtosell");
 			},
+		},
+		mounted:function(){
+			
 		}
 		
 	}
