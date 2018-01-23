@@ -19,8 +19,10 @@ import message from './components/message/message.vue';
 import howToSell from'./components/sell/howToSell.vue';
 import search from './components/search/search.vue';
 import news from './components/sell/news.vue';
-import detail from'./components/buy/detail/detail.vue';
+import detail from './components/buy/detail/detail.vue';
+import topush from './components/sell/topush.vue';
 import car from './components/car/car.vue';
+
 
 
 
@@ -58,13 +60,14 @@ var router  = new VueRouter({
     {path:'/my',component:my},
     {path:'/buy',component:buy},
     {path:'/update',component:{}},
-    {path:'/sifts',component:{}},
     {path:'/message',component:message},
     {path:'/search',component:search},
     {path:'/news',component:news},
     {path:'/sifts',component:sifts},
     {path:'/detail',component:detail},
-    {path:'/car',component:car}
+    {path:'/topush',component:topush},
+    {path:'/car',component:car},
+
   ]
 })
 
@@ -72,6 +75,7 @@ new Vue({
   el: '#app',
   router,
   render: h => h(App)
+  
 })
 
 
