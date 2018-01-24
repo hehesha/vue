@@ -1,7 +1,7 @@
 <template>
     <div id="order">
         <div class="o_head">
-        <mu-icon value="navigate_before"/>
+        <mu-icon value="navigate_before" @click ="$router.go(-1)"/>
         确认订单
         </div>
         <div class="o_main">

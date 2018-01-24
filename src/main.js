@@ -68,6 +68,7 @@ Vue.use(VueRouter);
 
 var router  = new VueRouter({
   routes:[
+  	{path:'/',component:buy},
     {path:'/sell',component:sell,name:'卖出页面主键'},
     {path:'/howtosell',component:howToSell,name:'卖出教学'},
     {path:'/my',component:my},
@@ -88,8 +89,8 @@ var router  = new VueRouter({
     {path:'/shoes',component:shoes},
     {path:'/accessory',component:accessory},
     {path:'/topush',component:topush,name:'商品提交页面'},
-		{path:'/advice',component:advice,name:'品牌建议'},
-		{path:'/control',component:control,name:'用户操控页面'}
+	{path:'/advice',component:advice,name:'品牌建议'},
+	{path:'/control',component:control,name:'用户操控页面'}
 
   ]
 })
