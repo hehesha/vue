@@ -9,6 +9,7 @@ window.Vue = Vue;
 import sell from './components/sell.vue'
 import my from './components/my/my.vue'
 import buy from './components/buy/buy.vue'
+import setting from './components/my/setting.vue'
 
 //zby：引入Muse-Ui
 import MuseUI from 'muse-ui'
@@ -22,7 +23,8 @@ var router  = new VueRouter({
   routes:[
     {path:'/sell',component:sell},
     {path:'/my',component:my},
-    {path:'/buy',component:buy}
+    {path:'/buy',component:buy},
+    {path:'/setting',component:setting}
   ]
 })
 
