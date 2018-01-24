@@ -14,35 +14,34 @@
 				
 			</li>
 			<li>
-				<mt-tab-item  @click.native.prevent="active = 'tab-container4'">待上架</mt-tab-item> 	
+				<mt-tab-item  @click.native.prevent="active = 'tab-container4'">上架宝贝</mt-tab-item> 	
 			</li>
-			<li>
-				<mt-tab-item  @click.native.prevent="active = 'tab-container5'">在售中</mt-tab-item>  
-				
-			</li>
+			
 			
 		</ul>
 		<div class="page-tab-container">
 			<mt-tab-container class="page-tabbar-tab-container" v-model="active" swipeable>
+				<!--全部组件-->
 				<mt-tab-container-item id="tab-container1">
-					组件2
+					<cadd></cadd>
+					<cprice></cprice>
+					<alreadypush></alreadypush>
+					
 				</mt-tab-container-item>
-				
+				<!--待寄出组件-->
 				<mt-tab-container-item id="tab-container2">
 					<cadd></cadd>
 				</mt-tab-container-item>
-				
+				<!--报价组件-->
 				<mt-tab-container-item id="tab-container3">
-					组件3
+					<cprice></cprice>
 				</mt-tab-container-item>
-				
+				<!--上架宝贝组件-->
 				<mt-tab-container-item id="tab-container4">
-					组件4
+					<alreadypush></alreadypush>
 				</mt-tab-container-item>
 				
-				<mt-tab-container-item id="tab-container5">
-					组件5
-				</mt-tab-container-item>
+				
 			</mt-tab-container>
 		</div>
 
@@ -52,12 +51,14 @@
 <script>
 	import { Navbar, TabItem, TabContainer, TabContainerItem } from 'mint-ui';
 	import cadd from './cAdd.vue';
+	import cprice from './cprice.vue';
+	import alreadypush from './alreadypush.vue'
 	export default {
 
 		data() {
 			return {
 				name:'page-tab-container',
-				nav: ['全部', '待寄出', '已报价', '待上架', "在售中"],
+				
 				active: 'tab-container1',
 			};
 		},
@@ -71,8 +72,12 @@
 			TabContainerItem,
 			Navbar,
 			TabItem,
+			//待寄出的东西
 			cadd,
-
+			//报价的组件
+			cprice,
+			//已上架的组价
+			alreadypush,
 		}
 	};
 </script>
