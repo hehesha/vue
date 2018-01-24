@@ -22,9 +22,13 @@ html,body{
     width: 100%;
     /*background-color: #F5F5F5;*/
 }
+ul,li{
+	list-style: none;
+}
 #app,.heightBox{
     height: 100%;
 }
+
 .skin{
     background: #FFC800 !important;
 }

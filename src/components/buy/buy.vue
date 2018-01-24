@@ -1,13 +1,28 @@
 <template>
-    <div>
-        购买
+
+    <div id="goods">
+        <heads></heads>
+        <selected class="selected"></selected>
     </div>
 </template>
 
 <script>
-import './buy.scss'
-export default {
-  
-}
+    import heads from './head.vue';
+    import selected from './selected.vue';
+    export default{
+        components: {
+            heads,
+            selected
+        },
+        methods:{
+            incrementTotal:function(event){
+                var item = event.target.parentNode.children;
+                for(var i=0;i<item.length;i++){
+                    item[i].style.borderBottom="";
+                }
+                event.target.style.borderBottom = "1px solid red";
+            }
+        }
+    }
 </script>
 
