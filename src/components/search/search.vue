@@ -47,12 +47,17 @@ export default {
                 this.datahistory.unshift(e.target.innerText);
                 $('.s_history').show();
             }
+            this.toseek();
         },
         Search:function(e){
             $('.s_search input').val(e.target.innerText);
+            this.toseek();
         },
         toseek:function(){
-        
+            var data=$('.s_search input').val();
+            data=decodeURI(data);
+            console.log(data);
+            location.href ='http://localhost:8080/#/seek?data='+data;
         }
    },
 }

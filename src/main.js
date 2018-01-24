@@ -35,6 +35,7 @@ import accessory from './components/buy/accessory/accessory.vue';
 import advice from './components/advice/advice.vue'
 import control from './components/sell/control.vue';
 import actdetail from './components/buy/act_detail/act_detail.vue'; 
+import seek from './components/search/seek.vue';
 
 
 
@@ -94,6 +95,7 @@ var router  = new VueRouter({
 	{path:'/advice',component:advice,name:'品牌建议'},
 	{path:'/control',component:control,name:'用户操控页面'},
   {path:'/actdetail',component:actdetail},
+  {path:'/seek',component:seek},
 
   ]
 })
