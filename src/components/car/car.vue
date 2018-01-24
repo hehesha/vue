@@ -15,9 +15,9 @@
               <p>满￥299包邮，还差￥299</p>
             </div>
         </div>
-        <ul class="c_goods">
+        <ul class="c_goods" @click="checks">
             <li  @click="" v-for="(value,key) in dataset">
-              <mu-checkbox class="demo-checkbox"/>
+              <input type=checkbox class="demo-checkbox"/>
                 <img :src="value.goods_pto" class="pic">
               </span>
               <a href="#">
@@ -32,10 +32,10 @@
         </ul>
           <div class="c_footer">
               <div class="c_total">
-                <p>总计<b>￥0</b><span>节省 ￥0</span></p>
+                <p>总计<b>￥{{total}}</b><span>节省 ￥0</span></p>
               </div>
               <div class="c_pay clearfix">
-                <mu-checkbox label="全选" class="demo-checkbox"/>
+              <label><input type="checkbox" class="demo-checkbox"/><span style="font-size:40px;margin-left:50px">全选</span></label>
                 <button>结算</button>
               </div>
           </div>
@@ -50,10 +50,29 @@
     data(){
         return{
             dataset:[],
+            total:[],
         }
     },
     methods:{
+        checks:function(event){
+          if(event.target.tagName.toLowerCase() =='input'){
+                     
+            var money=[];
+            if(event.target.checked){
 
+              var li =event.target.parentNode;
+              //获取event所在的price
+              
+              var moneys = (li.lastChild.firstChild.lastChild.firstChild.innerText)*1;
+              money.push(moneys);
+              event.target.parentNode.style.background = '#fefbec';
+            }else{
+              event.target.parentNode.style.background = '';
+            }
+
+          }
+          console.log(money)
+        }
     },
     beforeMount(){
       var self = this;
