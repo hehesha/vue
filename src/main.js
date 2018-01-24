@@ -27,7 +27,7 @@ import girlclothes from './components/buy/girlclothes/girlclothes.vue';
 import shoes from './components/buy/shoes/shoes.vue';
 import accessory from './components/buy/accessory/accessory.vue';
 import advice from './components/advice/advice.vue'
-
+import control from './components/sell/control.vue';
 
 
 //zby：引入Muse-Ui
@@ -52,7 +52,9 @@ window.$ = window.jQuery = $ ;
 import VueAwesomeSwiper from 'vue-awesome-swiper';
 import 'swiper/dist/css/swiper.css';
 Vue.use(VueAwesomeSwiper)
-
+//zby页面切换效果
+import MintUI from 'mint-ui';
+Vue.use(MintUI);
 
 
 Vue.use(VueRouter);
@@ -75,7 +77,8 @@ var router  = new VueRouter({
     {path:'/shoes',component:shoes},
     {path:'/accessory',component:accessory},
     {path:'/topush',component:topush,name:'商品提交页面'},
-		{path:'/advice',component:advice,name:'品牌建议'}
+		{path:'/advice',component:advice,name:'品牌建议'},
+		{path:'/control',component:control,name:'用户操控页面'}
   ]
 })
 
@@ -85,7 +88,6 @@ new Vue({
   render: h => h(App)
   
 })
-
 
 
 

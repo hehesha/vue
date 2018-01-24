@@ -19,13 +19,16 @@
 			<div class="advicebox">
 				<textarea placeholder="请输入不少于20000000字的建议，不然不给你提交"/>
 			</div>
-			<p>提交</p>
+			<p style=" background-color: #333333;color: #FFFFFF;padding: 0.566666rem;text-align: center;font-size: 0.426666rem;margin-top: 1.333333rem;">提交</p>
 		</div>
 	</div>
 </template>
 
 <script>
-	import "../sell/sell.scss"
+	import "../sell/sell.scss";
+	export default{
+		
+	}
 </script>
 
 <style lang="scss">
@@ -50,7 +53,7 @@
 			font-size: 0.426666rem;
 			outline: none;
 		}
-			
+		
 		
 	}
 </style>

@@ -2,7 +2,7 @@
 	<div class="sellcontent">
 		<ul class="navbox">
 			<li>
-				<mu-icon value="card_giftcard"></mu-icon>
+				<mu-icon value="card_giftcard" @click='$router.push("control")'></mu-icon>
 				<span>待寄出</span>
 			</li>
 			<li>

@@ -140,10 +140,13 @@
 				ind:'',
 				goods_trademark:'',
 				imgUrls:[
-				"https://m.dior.cn/couture/ecommerce/media/catalog/product/cache/1/zoom_alt_image_1/x634/17f82f742ffe127f42dca9de82fb58b1/M/0/1515500783_M0598CVXN_M911_E01_Z.jpg",
-				"https://www.dior.cn/couture/var/dior/storage/images/joaillerie-horlogerie/push-joaillerie/11700888-54-chi-CN/珠宝_width_440.jpg",
-				"https://www.dior.cn/couture/var/dior/storage/images/parfum-beaute/push_produit/11796358-178-chi-CN/push_produit_width_440.jpg",
-				"https://m.dior.cn/couture/var/dior/storage/images/joaillerie/nouveautes/collections-joaillieres2/8884915-55-chi-CN/珠宝系列_reference.jpg"
+				"https://img.alicdn.com/imgextra/i2/2010197355/TB2ChbkcLal9eJjSZFzXXaITVXa_!!2010197355.jpg_430x430q90.jpg",
+				"https://img.alicdn.com/imgextra/i3/2010197355/TB2iSVTcVHM8KJjSZFwXXcibXXa_!!2010197355.jpg_430x430q90.jpg",
+				"https://img.alicdn.com/bao/uploaded/i2/2010197355/TB1YVx2camWQ1JjSZPhXXXCJFXa_!!0-item_pic.jpg_430x430q90.jpg",
+				"https://img.alicdn.com/bao/uploaded/i4/2010197355/TB11HYOfdfJ8KJjy0FeXXXKEXXa_!!0-item_pic.jpg_430x430q90.jpg",
+				'https://img.alicdn.com/imgextra/i3/2010197355/TB24kuhic2vU1JjSZFwXXX2cpXa_!!2010197355.jpg_430x430q90.jpg',
+				'https://img.alicdn.com/bao/uploaded/i3/2010197355/TB11z44ihrI8KJjy0FpXXb5hVXa_!!0-item_pic.jpg_430x430q90.jpg',
+				'https://img.alicdn.com/bao/uploaded/i1/2010197355/TB1WyUGbv6H8KJjSspmXXb2WXXa_!!0-item_pic.jpg_430x430q90.jpg'
 				],
 				isShow:true,
 				imgUrl:'',
@@ -343,6 +346,8 @@
 	overflow-x: hidden;
 	padding-left: 1.4rem;
 	padding-top: 3rem;
+	overflow-x:hidden ;
+	height: 11.333333rem;
 	img{
 		
 		width: 3rem;

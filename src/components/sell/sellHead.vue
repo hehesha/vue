@@ -30,5 +30,8 @@
 </script>
 
 <style lang="scss">
-	
+	.sellhead{
+        background-color: #F5F5F5;
+		
+	}
 </style>
