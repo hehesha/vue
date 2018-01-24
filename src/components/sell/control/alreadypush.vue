@@ -1,18 +1,35 @@
 <template>
 	<div class="databox">
-		<h2>您的宝贝正在售卖中哟~</h2>
+		<h2>您有宝贝正在售卖中哟~</h2>
 		<ul @click="$router.push('detail?id=2')">
 			<li>
 				<p>
 					<img src="../../../assets/goodlist1.jpg"/>
-					<span>高级用品</span>
+					<span>包类</span>
+					<span style="color: #FD5C02;padding-left: 0.266666rem;">品牌：卡洛黛茜</span>
+					
 				</p>
 				<p class="price">
 					<span>
 						价格：
 					</span>
 					<span>
-						￥1000.00
+						￥998.00
+					</span>
+				</p>
+			</li>
+			<li v-for="(item,index) in selllist" :key="item.id">
+				<p>
+					<img v-lazy="item.goods_pto"/>
+					<span>{{item.type}}</span>
+					<span style="color: #FD5C02;padding-left: 0.266666rem;">品牌：{{item.goods_trademark}}</span>
+				</p>
+				<p class="price">
+					<span>
+						预售价格：
+					</span>
+					<span>
+						￥{{item.default_price}}
 					</span>
 				</p>
 			</li>
@@ -25,8 +42,26 @@
 	export default{
 		data(){
 			return{
-				
+				selllist:[],
 			}
+		},
+		mounted:function(){
+			var self = this;
+			self.$axios({
+				url: "http://10.3.136.62:88/getsell",
+			
+			}).then(function(res) {
+				
+				console.log(res.data.data.results)
+				var resdata = res.data.data.results;
+				resdata.forEach(function(item){
+					if(item.availability==2){
+						self.selllist.push(item)
+					}
+				});
+				
+				console.log(self.selllist)
+			})	
 		}
 	}
 </script>
@@ -40,6 +75,8 @@
 		color: #FD5C02;
 		border-bottom: 0.013333rem solid #DBDBDB;
 		letter-spacing: 0.133333rem;
+		
+		
 	}
 	.databox{
 		padding: 0.266666rem;

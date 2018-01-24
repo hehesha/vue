@@ -2,7 +2,7 @@
 	<div class="databox">
 		<h2>已报价</h2>
 		<ul>
-			<li>
+			<!--<li>
 				<p>
 					<img src="../../../assets/goodlist01.jpg"/>
 					<span>美美哒哟~</span>
@@ -15,6 +15,22 @@
 						￥1000.00
 					</span>
 				</p>
+			</li>-->
+			<li v-for="(item,index) in selllist" :key="item.id">
+				<p>
+					<img v-lazy="item.goods_pto"/>
+					<span>{{item.type}}</span>
+					<span style="color: #FD5C02;padding-left: 0.266666rem;">品牌：{{item.goods_trademark}}</span>
+				</p>
+				<p class="price">
+					<span>
+						预售价格：
+					</span>
+					<span>
+						￥{{item.default_price}}
+					</span>
+				</p>
+				
 			</li>
 		</ul>
   		
@@ -26,8 +42,26 @@
 	export default{
 		data(){
 			return{
-				
+				selllist:[],
 			}
+		},
+		mounted:function(){
+			var self = this;
+			self.$axios({
+				url: "http://10.3.136.62:88/getsell",
+			
+			}).then(function(res) {
+				
+				console.log(res.data.data.results)
+				var resdata = res.data.data.results;
+				resdata.forEach(function(item){
+					if(item.availability==1){
+						self.selllist.push(item)
+					}
+				});
+				
+				console.log(self.selllist)
+			})	
 		}
 	}
 </script>
@@ -41,6 +75,8 @@
 		color: #FD5C02;
 		border-bottom: 0.013333rem solid #DBDBDB;
 		letter-spacing: 0.133333rem;
+		
+		padding-top: 10px;
 	}
 	.databox{
 		padding: 0.266666rem;
