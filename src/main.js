@@ -22,6 +22,9 @@ import news from './components/sell/news.vue';
 import detail from './components/buy/detail/detail.vue';
 import topush from './components/sell/topush.vue';
 import car from './components/car/car.vue';
+import order from './components/order/order.vue';
+import addaddress from './components/order/add_address/add_address.vue';
+import address from './components/order/add_address/address.vue';
 
 import girlclothes from './components/buy/girlclothes/girlclothes.vue';
 import shoes from './components/buy/shoes/shoes.vue';
@@ -39,7 +42,8 @@ Vue.use(MuseUI)
 // cls引入mint-ui
 import { Swipe, SwipeItem } from 'mint-ui';
 import 'mint-ui/lib/style.css';
-Vue.use({ Swipe, SwipeItem });
+import { Toast } from 'mint-ui';
+Vue.use({ Swipe, SwipeItem ,Toast});
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
 
@@ -74,6 +78,9 @@ var router  = new VueRouter({
     {path:'/sifts',component:sifts},
     {path:'/detail',component:detail},
     {path:'/car',component:car},
+    {path:'/order',component:order},
+    {path:'/addaddress',component:addaddress},
+    {path:'/address',component:address},
     {path:'/shoes',component:shoes},
     {path:'/accessory',component:accessory},
     {path:'/topush',component:topush,name:'商品提交页面'},

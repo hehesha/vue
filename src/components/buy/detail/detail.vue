@@ -8,7 +8,7 @@
             </a>
         </div>
         <div id="goods_main" v-if="b[0]">
-            <div style="text-align:center;"><img :src="b[0].goods_pto"></div>
+            <div style="text-align:center;"><img :src="b[0].goods_pto" @click=""></div>
             <div id="goods_foot">
             <div class="goods_foot_t">
                 <p style="font-size:0.4rem;line-height:1.04rem;">{{b[0].goods_trademark}}</p>
@@ -106,11 +106,13 @@
             var bb = location.hash.split('?')[1].split('=')[1];
             axios.get('http://10.3.136.62:88/detail',{params: {id: bb}}).then(function (response) {
                  self.b = response.data.data.results;
+                 console.log(self.b )
+
             })
         },
         methods:{
             shopping:function(id){
-                axios.get('http://10.3.136.62:88/order',{params: {id: id}}).then(function (response) {
+                axios.get('http://10.3.136.62:88/order',{params:(this.b)[0]}).then(function (response) {
                     console.log(response)
                 })
             }
