@@ -15,7 +15,7 @@
                 <li>
                     <label>
                         联系电话
-                        <input type="phone" placeholder="请输入手机号" id="phone"/>
+                        <input type="tel" placeholder="请输入手机号" id="phone"/>
                     </label>
                     <mu-icon value="control_point"/>      
                 </li>

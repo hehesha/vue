@@ -33,6 +33,7 @@ import shoes from './components/buy/shoes/shoes.vue';
 import accessory from './components/buy/accessory/accessory.vue';
 import advice from './components/advice/advice.vue'
 import control from './components/sell/control.vue';
+import actdetail from './components/buy/act_detail/act_detail.vue'; 
 
 
 
@@ -90,7 +91,8 @@ var router  = new VueRouter({
     {path:'/accessory',component:accessory},
     {path:'/topush',component:topush,name:'商品提交页面'},
 	{path:'/advice',component:advice,name:'品牌建议'},
-	{path:'/control',component:control,name:'用户操控页面'}
+	{path:'/control',component:control,name:'用户操控页面'},
+  {path:'/actdetail',component:actdetail},
 
   ]
 })

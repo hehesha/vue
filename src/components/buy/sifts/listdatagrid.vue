@@ -46,6 +46,7 @@
         beforeMount(){
         var self = this;
             axios.get(self.api,{params: {type:this.type}}).then(function (response) {
+                console.log(response);
                 self.dataset = (response.data.data.results);
             })
         },
