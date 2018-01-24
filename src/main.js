@@ -14,6 +14,7 @@ window.Vue = Vue;
 //引入组件的位置
 import sell from './components/sell.vue'
 import my from './components/my/my.vue'
+import unpaid from './components/my/unpaid/unpaid.vue'
 
 import setting from './components/my/setting.vue'
 import sifts from './components/buy/sifts/sifts.vue'
@@ -78,6 +79,7 @@ var router  = new VueRouter({
     {path:'/girlclothes',component:girlclothes},
     // {path:'/message',component:message},
     {path:'/update',component:{}},
+    {path:'/unpaid',component:unpaid},
 
     {path:'/search',component:search},
     {path:'/news',component:news,name:'信息接受页面'},

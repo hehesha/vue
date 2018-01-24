@@ -16,8 +16,8 @@
             </div>
         </div>
         <ul class="c_goods" @click="checks">
-            <li v-for="(value,key) in dataset">
-              <mu-icon value="delete_forever" color="red" class="delete" :size="32"/>
+            <li v-for="(value,key) in dataset" :id="value.id" v-if="value.type == 0">
+              <mu-icon value="delete_forever" color="red" class="delete" :size="32" @click="deletes(value.id,key)"/>
               <input type=checkbox class="demo-checkbox"/>
                 <img :src="value.goods_pto" class="pic">
               </span>
@@ -47,6 +47,7 @@
 <script>
     import './car.scss'
     import axios from 'axios'
+    import qs from 'qs';
   export default {
     data(){
         return{
@@ -88,7 +89,19 @@
           }
         },
         compile:function(){
-          
+          var $c_goods = $('.c_goods');
+          $c_goods.find('li').find('i').css({
+            display:'block'
+          })
+        },
+        deletes:function(id,index){
+            var self =this
+            axios.post('http://10.3.136.62:88/delete_order',
+              qs.stringify({id:id}),
+              {headers: {'Content-Type': 'application/x-www-form-urlencoded'}}
+              ).then(function (response) {
+                  self.dataset.splice(index,1)
+            })
         }
     },
     beforeMount(){
@@ -99,10 +112,17 @@
           var item = response.data.data.results;
           item.forEach(function(ss){
             var bb = JSON.parse(ss.goods_detail)
+            var orderId = JSON.parse(ss.id);
+            var accessory = JSON.parse(ss.type);
+            bb.type = accessory;
+            bb.id = orderId;
             self.dataset.push(bb);
+            console.log(self.dataset)
           })
       })
     }
 }
+
+
 
 </script>

@@ -113,7 +113,9 @@
         methods:{
             shopping:function(id){
                 axios.get('http://10.3.136.62:88/order',{params:(this.b)[0]}).then(function (response) {
-                    console.log(response)
+                    if(response.data == false){
+                        alert('已经添加过此商品了')
+                    }
                 })
             }
         }

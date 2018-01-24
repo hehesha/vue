@@ -40,10 +40,10 @@
 
             <div class="function">
 
-                <div>
+                <a href="#/unpaid"><div @click="unpaid">
                     <mu-icon value="payment" :size="50" color='black'/>
                     <p>待支付</p>
-                </div>
+                </div></a>
                 <div>
                     <mu-icon value="airport_shuttle" :size="50" color='black'/>
                     <p>代发货</p>
@@ -96,7 +96,11 @@
 <script>
     import './my.scss';
     export default {
-        
+        methods:{
+            unpaid:function(){
+                console.log(666)
+            }
+        }
     }
 </script>
 
