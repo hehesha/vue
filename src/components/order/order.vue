@@ -6,7 +6,7 @@
         </div>
         <div class="o_main">
             <div class="address">
-                <button>
+                <button @click="$router.push('addaddress')">
                     <mu-icon value="add"/> 
                     添加地址
                 </button>

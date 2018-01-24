@@ -1,7 +1,7 @@
 <template>
     <div id="a_address">
         <div class="a_header">
-        <mu-icon value="navigate_before"/>
+        <mu-icon value="navigate_before" @click="$router.go(-1)"/>
         我的地址
         </div>
         <div class="ad_main">
