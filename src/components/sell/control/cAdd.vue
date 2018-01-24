@@ -2,13 +2,22 @@
 	<div class="databox">
 		<h2>待寄出</h2>
 		<ul>
-			<li>
+			<!--<li>
 				<p>
 					<img src="../../../assets/accessory.jpg"/>
 					<span>这是一只猪</span>
 				</p>
 				<button @click="open('right')">我要寄出</button>
 				 
+			</li>-->
+			<li v-for="(item,index) in selllist" :key="item.id">
+				<img  v-lazy="item.goods_pto"/>
+				<span>{{item.type}}</span>
+				<span style="color: #FD5C02;padding-left: 0.166666rem;">品牌：{{item.goods_trademark}}</span>
+				
+				<mu-icon value="delete_forever" @click='delete1(index,item.id)'></mu-icon>
+				
+				<button @click="open('right')">我要寄出</button>
 			</li>
 		</ul>
 		<mu-popup position="right" popupClass="demo-popup-right" :open="rightPopup" @close="close('right')">
@@ -39,13 +48,15 @@
 </template>
 
 <script>
+	import qs from 'qs'
 	export default{
 		data(){
 			return{
 				bottomPopup: false,
 		      	topPopup: false,
 		      	leftPopup: false,
-		      	rightPopup: false
+		      	rightPopup: false,
+		      	selllist:[],
 			}	
 		},
 		methods:{
@@ -54,8 +65,44 @@
 		    },
 		    close (position) {
 		      this[position + 'Popup'] = false
+		    },
+		    delete1(index,id){
+		    	console.log(index,id)
+		    	var self = this;
+		    	self.$axios({
+		    		method:'POST',
+		    		url:"http://10.3.136.62:88/delete_sell",
+		    		data:qs.stringify({id:id}),
+					headers:{'Content-Type': "application/x-www-form-urlencoded"}
+		    		
+		    	}).catch(function(err){
+		    		console.log(err);
+		    	}).then(function(index){
+		    		self.selllist.splice(index,1);
+		    	})
 		    }
-				}
+		},
+		//这里是获取数据库的信息
+		mounted:function(){
+			var self = this;
+			self.$axios({
+				url: "http://10.3.136.62:88/getsell",
+			
+			}).then(function(res) {
+				
+				console.log(res.data.data.results)
+				var resdata = res.data.data.results;
+				resdata.forEach(function(item){
+					if(item.availability==0){
+						self.selllist.push(item)
+					}
+				});
+				
+				console.log(self.selllist)
+			})
+			
+		}
+		
 	}
 </script>
 
@@ -68,6 +115,9 @@
 		color: #FD5C02;
 		border-bottom: 0.013333rem solid #DBDBDB;
 		letter-spacing: 0.133333rem;
+		
+		
+		
 	}
 	.databox{
 		padding: 0.266666rem;
@@ -105,10 +155,7 @@
 		span{
 			vertical-align: middle;
 		}
-		.smb{
-			/*border: 0.013333rem solid #FD5C02;*/
-			
-		}
+		
 		p{
 			margin: 0.566666rem 0;
 		}
@@ -118,4 +165,10 @@
 			transform: translateX(-30%);
 		}
 	}
+li{
+	i{
+		font-size: 0.733333rem;
+		vertical-align: middle;
+	}
+}
 </style>

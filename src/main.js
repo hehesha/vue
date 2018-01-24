@@ -6,6 +6,15 @@ import axios from 'axios'
 //zby全局使用axios
 Vue.prototype.$axios = axios ;
 
+//zby预加载
+import VueLazyLoad from 'vue-lazyload';
+Vue.use(VueLazyLoad,{
+    error:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1516803351126&di=05de81f8e5693d48c7b382aa804f862e&imgtype=0&src=http%3A%2F%2Ff.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F1ad5ad6eddc451dab453981cb4fd5266d116329b.jpg',
+    loading:require('./assets/loading.gif'),
+//  preLoad: 1,
+    attempt: 1
+});
+
 
 import Vuex from 'vuex'
 //zby:为了在全局环境中使用vue
@@ -14,6 +23,7 @@ window.Vue = Vue;
 //引入组件的位置
 import sell from './components/sell.vue'
 import my from './components/my/my.vue'
+import unpaid from './components/my/unpaid/unpaid.vue'
 
 import setting from './components/my/setting.vue'
 import sifts from './components/buy/sifts/sifts.vue'
@@ -80,6 +90,7 @@ var router  = new VueRouter({
     {path:'/girlclothes',component:girlclothes},
     // {path:'/message',component:message},
     {path:'/update',component:{}},
+    {path:'/unpaid',component:unpaid},
 
     {path:'/search',component:search},
     {path:'/news',component:news,name:'信息接受页面'},
@@ -93,9 +104,11 @@ var router  = new VueRouter({
     {path:'/accessory',component:accessory},
     {path:'/topush',component:topush,name:'商品提交页面'},
 	{path:'/advice',component:advice,name:'品牌建议'},
+
 	{path:'/control',component:control,name:'用户操控页面'},
   {path:'/actdetail',component:actdetail},
   {path:'/seek',component:seek},
+
 
   ]
 })
