@@ -8,6 +8,15 @@ module.exports = {
     publicPath: '/dist/',
     filename: 'build.js'
   },
+  // 添加代码
+  plugins: [
+    new webpack.ProvidePlugin({
+    $: "jquery",
+    jQuery: "jquery",
+    jquery: "jquery",
+    "window.jQuery": "jquery"
+      })
+    ],
   module: {
     rules: [
       {
