@@ -3,7 +3,7 @@
         
         <div class="header">
             
-            <mu-icon value="notifications_none" :size="50" color='black'/>
+            <mu-icon value="notifications_none" :size="50" color='black'@click = "$router.push('news')"/>
             <a href="#/setting"><mu-icon value="brightness_low" :size="50" color='black'/></a>
         </div>
 
@@ -32,7 +32,7 @@
 
             <div class="shoppingList">
                 
-                <div class="shoppingList_wz">
+                <div class="shoppingList_wz" @click = "$router.push('order')">
 
                     <span>购买订单</span><span>查看全部<mu-icon value="chevron_right" :size="42" color='#ccc'/></span>
                 </div>
@@ -60,7 +60,7 @@
 
             <div class="shoppingList1 shoppingList2">
                 
-                <div class="shoppingList_wz">
+                <div class="shoppingList_wz" @click = "$router.push('control')">
 
                     <span>我卖的闲置</span><span>查看全部<mu-icon value="chevron_right" :size="42" color='#ccc' vertical-align="center"/></span>
                 </div>
