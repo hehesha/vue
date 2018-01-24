@@ -1,11 +1,40 @@
 <template>
 	<div class="databox">
-		<h2 style="text-align: right;color: #FD5C02;border-bottom: 0.013333rem solid #DBDBDB;">待寄出</h2>
-		<p>
-			<img src="../../../assets/accessory.jpg"/>
-			<span>这是一只猪</span>
-		</p>
-		<button>我要寄出</button>
+		<h2>待寄出</h2>
+		<ul>
+			<li>
+				<p>
+					<img src="../../../assets/accessory.jpg"/>
+					<span>这是一只猪</span>
+				</p>
+				<button @click="open('right')">我要寄出</button>
+				 
+			</li>
+		</ul>
+		<mu-popup position="right" popupClass="demo-popup-right" :open="rightPopup" @close="close('right')">
+    		<!--<mu-raised-button label="关闭弹框" @click="close('right')" primary fullWidth/>-->
+			<mu-content-block>
+				<div class="smb"> 
+					<h2>请于7天内寄到以下地址</h2>
+					<p>
+						<mu-icon value="person_pin">
+						</mu-icon>
+						<span>萝卜小分队</span>
+					</p>
+					<p>
+						<mu-icon value="settings_phone"></mu-icon>
+						<span>020-811331122</span>
+					</p>
+					<p>
+						<mu-icon value="add_location"></mu-icon>
+						<span>广东省广州市天河区岗顶萝卜小队窝</span>
+					</p>
+				</div>
+				<mu-raised-button label="我知道了" @click="close('right')"  fullWidth/>
+	
+			</mu-content-block>
+  		</mu-popup>
+  		
 	</div>
 </template>
 
@@ -13,18 +42,31 @@
 	export default{
 		data(){
 			return{
-				
-			}
-		}
+				bottomPopup: false,
+		      	topPopup: false,
+		      	leftPopup: false,
+		      	rightPopup: false
+			}	
+		},
+		methods:{
+			open (position) {
+		      this[position + 'Popup'] = true
+		    },
+		    close (position) {
+		      this[position + 'Popup'] = false
+		    }
+				}
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped="scoped">
 	h2{
 		height: 0.833333rem;
 		font-size: 0.426666rem;
 		padding-right: 0.4rem;
-		font-weight: bold;
+		text-align: right;
+		color: #FD5C02;
+		border-bottom: 0.013333rem solid #DBDBDB;
 		letter-spacing: 0.133333rem;
 	}
 	.databox{
@@ -46,9 +88,34 @@
 	}
 	button{
 		font-size: 0.533333rem;
-		padding: 0.4rem;
+		padding: 0.2rem 0.4rem;
 		margin-top:0.426666rem ;
-		margin-left: 0.426666rem;
+		margin-left: 60%;
 	}
-	
+	.mu-content-block{
+		padding:0.133333rem 2.333333rem 1rem 1rem;
+		h2{
+			color: #333333;
+		}
+		i{
+			vertical-align: middle;
+			font-size: 0.426666rem;
+			padding-right: 0.233333rem;
+		}
+		span{
+			vertical-align: middle;
+		}
+		.smb{
+			/*border: 0.013333rem solid #FD5C02;*/
+			
+		}
+		p{
+			margin: 0.566666rem 0;
+		}
+		.mu-raised-button{
+			border: 0.023333rem solid #FD5C02;
+			padding: 0.7rem;
+			transform: translateX(-30%);
+		}
+	}
 </style>

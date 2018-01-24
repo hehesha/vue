@@ -211,7 +211,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped="scoped">
 	.sellcontent {
 		display: flex;
 		flex-direction: column;
@@ -277,8 +277,12 @@
 }
 .mu-content-block{
 	width: 10rem;
+	height: 17.8rem;
 	p{
 		width: 10rem;
+	}
+	ul{
+		flex-direction: column;
 	}
 }
 .mu-appbar-title {
@@ -329,10 +333,10 @@
 	}
 	#choose{
 		padding: 0.233333rem;
-		
+		outline: hidden;
 		width: 8.333333rem;
 		font-size: 0.4rem;
-		
+		border-bottom: 0.04rem solid #333333;
 	}
 	
 }
@@ -357,5 +361,8 @@
 		box-sizing: border-box;
 		border:0.026666rem solid #FD5C02;
 	}
+}
+.mu-popup-left,.mu-popup-top{
+	width: 10rem;
 }
 </style>
