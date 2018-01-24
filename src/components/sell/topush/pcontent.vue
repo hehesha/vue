@@ -111,7 +111,7 @@
 			</div>
 			 <mu-popup position="left" popupClass="demo-popup-left" :open="leftPopup" @close="close('left')">
     			
-				<div class="imgbox">
+				<div class="imgbox sellhead">
 					<!--<img src="../../../assets/goodlist.jpg"/>
 		    		<img src="../../../assets/goodlist6.jpg"/>
 		    		<img src="../../../assets/text1.jpg"/>-->
@@ -212,6 +212,7 @@
 </script>
 
 <style lang="scss" scoped="scoped">
+	.sellhead{width: 9.8rem;}
 	.sellcontent {
 		display: flex;
 		flex-direction: column;
@@ -365,4 +366,5 @@
 .mu-popup-left,.mu-popup-top{
 	width: 10rem;
 }
+
 </style>
