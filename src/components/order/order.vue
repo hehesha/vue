@@ -6,7 +6,7 @@
         </div>
         <div class="o_main">
             <div class="address">
-                <button>
+                <button @click="$router.push('addaddress')">
                     <mu-icon value="add"/> 
                     添加地址
                 </button>
@@ -14,26 +14,13 @@
             <div class="buyList">
                 <h3 @click="toggle">购买清单 <mu-icon :value="arrow"/></h3>
                 <ul class="g_list">
-                    <li>
-                        <span class="pic">
-                            <span class="cover">72小时可退</span>
-                        </span>
+                    <li v-for="(value,key) in dataset">
+                        <img :src="value.goods_pto" class="pic">
                         <div class="c_content">
-                            <h3>Eifini</h3>
-                            <h4>低调轻奢名媛范</h4>
-                            <p>羊毛系腰气质妮子大衣<span>M码</span></p>
-                            <h5><b>￥968</b><s>￥1980</s></h5>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="pic">
-                            <span class="cover">72小时可退</span>
-                        </span>
-                        <div class="c_content">
-                            <h3>Eifini</h3>
-                            <h4>低调轻奢名媛范</h4>
-                            <p>羊毛系腰气质妮子大衣<span>M码</span></p>
-                            <h5><b>￥968</b><s>￥1980</s></h5>
+                            <h3>{{value.goods_trademark}}</h3>
+                            <h4>{{value.goods_name}}</h4>
+                            <p>{{value.title_name}}<span>{{value.size}}</span></p>
+                            <h5><b>{{value.sell_price}}</b><s>{{value.sell_prices}}</s></h5>
                         </div>
                     </li>
                 </ul>
@@ -63,12 +50,13 @@
 </template>
 
 <script>
- import './order.scss'
-    
+    import './order.scss'
+    import axios from 'axios'
     export default {
       data () {
         return {
           arrow:'arrow_drop_up',
+          dataset:[],
         }
      
     },
@@ -83,6 +71,18 @@
                 this.arrow='arrow_drop_down';
             }
         }
+    },
+    beforeMount(){
+      this.totals=0
+      var self = this;
+      axios.get('http://10.3.136.62:88/getorder').then(function (response) {
+          console.log(response)
+          var item = response.data.data.results;
+          item.forEach(function(ss){
+            var bb = JSON.parse(ss.goods_detail)
+            self.dataset.push(bb);
+          })
+      })
     }
 }
 

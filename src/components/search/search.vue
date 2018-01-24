@@ -8,7 +8,7 @@
                 </div>
                 <span @click="$router.push('/buy')">取消</span>
             </div>
-            <ul class="s_history clearfix">
+            <ul class="s_history clearfix" @click="Search">
                 <h3>历史记录<span @click="clear">清空</span></h3>
                 <li v-for="(value,index) in datahistory">{{value}}</li>
             </ul>
@@ -48,6 +48,12 @@ export default {
                 $('.s_history').show();
             }
         },
+        Search:function(e){
+            $('.s_search input').val(e.target.innerText);
+        },
+        toseek:function(){
+        
+        }
    },
 }
 
