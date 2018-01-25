@@ -84,7 +84,12 @@
                 加入购物车
             </div>
         </div>
-
+        <div class="popup">
+            您已添加过此商品
+        </div>
+        <div class="flew">
+            
+        </div>
     </div>
 </template>
 <script>
@@ -107,17 +112,26 @@
             axios.get('http://10.3.136.62:88/detail',{params: {id: bb}}).then(function (response) {
                  self.b = response.data.data.results;
                  console.log(self.b )
-
             })
         },
         methods:{
             shopping:function(id){
                 axios.get('http://10.3.136.62:88/order',{params:(this.b)[0]}).then(function (response) {
+                    console.log(response)
+                    if(response.data.status == true){
+                        var $flew = $('.flew');
+                        $flew.animate({
+                            top:0,
+                            right:0,
+                            opacity:0
+                        })
+                    }
                     if(response.data == false){
-                        alert('已经添加过此商品了')
+                        var $popup = $('.popup');
+                        $popup.fadeIn(600).fadeOut(2000);
                     }
                 })
-            }
+            },
         }
     }
 </script>

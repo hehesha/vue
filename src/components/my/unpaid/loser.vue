@@ -17,10 +17,9 @@
               </a>
             </li>
         </ul>
-        <a href="#/order"><div class="o_footer clearfix" style="position:fixed;">
-            <span>实付<b>￥0</b></span>
-            <button>去支付</button>
-        </div></a>
+        <div class="o_footer clearfix" style="position:fixed;">
+            <a href="#/order"><button>去支付</button></a>
+        </div>
     </div>
 </template>
 

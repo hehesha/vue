@@ -2,7 +2,7 @@
     <div>
         <ul class="c_goods">
 
-            <li v-for="(value,key) in dataset" :id="value.id" v-if="value.type==2">
+            <li v-for="(value,key) in dataset" :id="value.id" v-if="value.type==3">
 
               <mu-icon value="delete_forever" color="red" class="delete" :size="32" />
               <input type=checkbox class="demo-checkbox"/>

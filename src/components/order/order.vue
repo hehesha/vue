@@ -42,7 +42,7 @@
                 <li>运费<span>￥0.00</span></li>
             </ul>
         </div>
-        <div class="o_footer clearfix">
+        <div class="o_footer clearfix" @click="peyment">
             <span>实付<b>￥{{moneys}}</b></span>
             <button>去支付</button>
         </div>
@@ -71,6 +71,22 @@
                 $g_list.hide();
                 this.arrow='arrow_drop_down';
             }
+        },
+        peyment:function(){
+            var goodsID = [];
+            console.log(this.dataset)
+            for(var i=0;i<this.dataset.length;i++){
+                if((this.dataset)[i].type==1){
+                    goodsID.push(this.dataset[i].id*1)
+                }
+            }
+            var $buyList =$('.buyList');
+            if($buyList.find('li').length != 0 ){
+                axios.get('http://10.3.136.62:88/order_type',{params: {id:goodsID,type:2}}).then(function (response) {
+                    console.log(response)
+                })
+            }
+            
         }
     },
     beforeMount(){
@@ -82,8 +98,10 @@
             var item = response.data.data.results;
             item.forEach(function(ss){
                 var bb = JSON.parse(ss.goods_detail)
+                var orderId = JSON.parse(ss.id);
                 var accessory = JSON.parse(ss.type);
                 bb.type = accessory;
+                bb.id = orderId;
                 self.dataset.push(bb);
                 if(bb.type==0){
                     var price = JSON.parse(bb.sell_price);

@@ -140,3 +140,25 @@
     padding: 0 0.2rem 0 0.453333rem;
     font-weight:bold;
 }
+.popup{
+    display:none;
+    width:300px;
+    height:1.066667rem;
+    background:#000;
+    position:fixed;
+    top:70%;
+    left:250px;
+    text-align: center;
+    line-height:1.066667rem;
+    font-size:0.4rem;
+    border-radius:5%;
+    color:#fff;
+}
+.flew{
+    position:fixed;
+    top:90%;
+    right:50%;
+    width:50px;
+    height:50px;
+    background:black;
+}
