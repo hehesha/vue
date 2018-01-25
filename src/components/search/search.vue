@@ -50,8 +50,11 @@ export default {
             this.toseek();
         },
         Search:function(e){
+        if(e.target.tagName=='LI'){
+        
             $('.s_search input').val(e.target.innerText);
             this.toseek();
+        }
         },
         toseek:function(){
             var data=$('.s_search input').val();

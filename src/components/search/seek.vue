@@ -2,7 +2,7 @@
     <div class="toseek">
         <div class="se_header">
             <div class="h_top" @click="$router.go(-1)">
-                <mu-icon value="navigate_before" @click='$router.go(-1)'/>
+                <mu-icon value="navigate_before" />
                 <label>
                     <mu-icon value="search"/>
                     <input type="text" :value="type"/>
