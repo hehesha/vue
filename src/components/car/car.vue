@@ -21,7 +21,7 @@
               <input type=checkbox class="demo-checkbox"/>
               </span>
               <div style="margin-left:50px;">
-                <img :src="value.goods_pto" class="pic">
+                <img v-lazy="value.goods_pto" class="pic">
                 <div class="c_content" @click="skip">
                   <h3>{{value.goods_trademark}}</h3>
                   <h4>{{value.goods_name}}</h4>
@@ -92,22 +92,14 @@
           var goodsId = $Li.getAttribute('id');
           axios.get('http://10.3.136.62:88/getorder').then(function (response) {
             var data = response.data.data.results;
-            //var dataID = data.id;
-            //console.log(dataID)
-            (function(){
-              for(var j=0;j<data.length;j++){
-                var goods = JSON.parse(data[j].goods_detail);
-              }
-            })()
-            
             for(var i=0;i<data.length;i++){
               if(data[i].id == goodsId){
-                  //data[i].goods_detail.
+                  var id = JSON.parse(data[i].goods_detail).id;
+                  location.href ='http://localhost:8080/#/detail?id='+id;
               }
             }
-            console.log(goods);
           })
-          //location.href ='http://localhost:8080/#/detail?id='+3;
+          
         },
         checkall:function(e){
             var $all=$('.all');
@@ -123,7 +115,6 @@
                     var price=$($lis[i]).find('b').html()*1;
                     total+=price;
                 }
-                console.log(total);
                 this.totals=total;
             }else{
             this.totals=0;

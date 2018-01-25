@@ -15,7 +15,7 @@
                 <h3 @click="toggle">购买清单 <mu-icon :value="arrow"/></h3>
                 <ul class="g_list">
                     <li v-for="(value,key) in dataset"  v-if="value.type == 1">
-                        <img :src="value.goods_pto" class="pic">
+                        <img v-lazy="value.goods_pto" class="pic">
                         <div class="c_content">
                             <h3>{{value.goods_trademark}}</h3>
                             <h4>{{value.goods_name}}</h4>

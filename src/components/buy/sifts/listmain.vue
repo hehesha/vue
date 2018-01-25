@@ -2,7 +2,7 @@
     <div id="main" v-if="dataset">
         <ul>
             <li v-for="(value,key) in dataset" :key="key" @click="aa((value.id)-1)">
-                <img :src="value.goods_pto">
+                <img v-lazy="value.goods_pto">
                 <div style="text-align:center">
                     <p>{{value.goods_trademark}}</p>
                     <p>{{value.goods_name}}</p>
