@@ -14,7 +14,7 @@
             <div class="buyList">
                 <h3 @click="toggle">购买清单 <mu-icon :value="arrow"/></h3>
                 <ul class="g_list">
-                    <li v-for="(value,key) in dataset">
+                    <li v-for="(value,key) in dataset"  v-if="value.type == 1">
                         <img :src="value.goods_pto" class="pic">
                         <div class="c_content">
                             <h3>{{value.goods_trademark}}</h3>
@@ -38,12 +38,12 @@
                 </li>
             </ul>
             <ul class="total">
-                <li>商品总额<span>￥6861.00</span></li>
+                <li>商品总额<span>{{moneys}}</span></li>
                 <li>运费<span>￥0.00</span></li>
             </ul>
         </div>
-        <div class="o_footer clearfix">
-            <span>实付<b>￥6861.00</b></span>
+        <div class="o_footer clearfix" @click="peyment">
+            <span>实付<b>￥{{moneys}}</b></span>
             <button>去支付</button>
         </div>
     </div>
@@ -57,6 +57,7 @@
         return {
           arrow:'arrow_drop_up',
           dataset:[],
+          moneys:[]
         }
      
     },
@@ -70,18 +71,50 @@
                 $g_list.hide();
                 this.arrow='arrow_drop_down';
             }
+        },
+        peyment:function(){
+            var goodsID = [];
+            console.log(this.dataset)
+            for(var i=0;i<this.dataset.length;i++){
+                if((this.dataset)[i].type==1){
+                    goodsID.push(this.dataset[i].id*1)
+                }
+            }
+            var $buyList =$('.buyList');
+            if($buyList.find('li').length != 0 ){
+                axios.get('http://10.3.136.62:88/order_type',{params: {id:goodsID,type:2}}).then(function (response) {
+                    console.log(response)
+                })
+            }
+            
         }
     },
     beforeMount(){
-      this.totals=0
-      var self = this;
-      axios.get('http://10.3.136.62:88/getorder').then(function (response) {
-          console.log(response)
-          var item = response.data.data.results;
-          item.forEach(function(ss){
-            var bb = JSON.parse(ss.goods_detail)
-            self.dataset.push(bb);
-          })
+        this.totals=0
+        var self = this;
+        axios.get('http://10.3.136.62:88/getorder').then(function (response) {
+            var total = [];
+            var money = 0;
+            var item = response.data.data.results;
+            item.forEach(function(ss){
+                var bb = JSON.parse(ss.goods_detail)
+                var orderId = JSON.parse(ss.id);
+                var accessory = JSON.parse(ss.type);
+                bb.type = accessory;
+                bb.id = orderId;
+                self.dataset.push(bb);
+                if(bb.type==0){
+                    var price = JSON.parse(bb.sell_price);
+                    total.push(price);
+                }
+                
+
+            })
+            
+            for(var i=0;i<total.length;i++){
+                money = money+total[i];
+            }
+            self.moneys = money;
       })
     }
 }

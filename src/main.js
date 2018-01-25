@@ -46,6 +46,7 @@ window.Vue = Vue;
 //引入组件的位置
 import sell from './components/sell.vue'
 import my from './components/my/my.vue'
+import unpaid from './components/my/unpaid/unpaid.vue'
 
 import setting from './components/my/setting.vue'
 import sifts from './components/buy/sifts/sifts.vue'
@@ -67,6 +68,7 @@ import accessory from './components/buy/accessory/accessory.vue';
 import advice from './components/advice/advice.vue'
 import control from './components/sell/control.vue';
 import actdetail from './components/buy/act_detail/act_detail.vue'; 
+
 import login from './components/my/login.vue';
 import register from './components/my/register.vue';
 
@@ -74,6 +76,7 @@ import register from './components/my/register.vue';
 import cadd from './components/sell/control/cAdd.vue';
 import alreadypush from './components/sell/control/alreadypush.vue';
 import cprice from './components/sell/control/cprice.vue';
+import seek from './components/search/seek.vue';
 
 
 
@@ -118,6 +121,7 @@ var router  = new VueRouter({
     {path:'/girlclothes',component:girlclothes},
     // {path:'/message',component:message},
     {path:'/update',component:{}},
+    {path:'/unpaid',component:unpaid},
 
     {path:'/search',component:search},
     {path:'/news',component:news,name:'信息接受页面'},
@@ -131,6 +135,7 @@ var router  = new VueRouter({
     {path:'/accessory',component:accessory},
     {path:'/topush',component:topush,name:'商品提交页面'},
 	{path:'/advice',component:advice,name:'品牌建议'},
+
 
 	{
 		path:'/control',
@@ -149,7 +154,12 @@ var router  = new VueRouter({
 	},
   	{path:'/actdetail',component:actdetail},
 	{path:'/login',component:login},
-	{path:'/register',component:register}
+	{path:'/register',component:register},
+
+  	{path:'/seek',component:seek},
+
+
+
   ]
 })
 
