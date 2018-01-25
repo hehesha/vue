@@ -65,7 +65,7 @@
 						self.$store.state.phone = datalist[0].phone;
 						self.$store.state.username = datalist[0].username;
 						self.$store.state.head_img = datalist[0].head_img;
-						
+						self.$store.state.userid = datalist[0].id;
 						self.$router.push('/my');
 						
 						

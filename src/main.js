@@ -25,11 +25,7 @@ const store = new Vuex.Store({
 	state:{
 		//zby测试
 		text1:'tab-container2',
-		phone: '',
-		address:'',
-		head_img:'',
-		username:'',
-		add_time:'',
+		userid:'',
 	},
 	mutations: {
         LoginPhone (state, phone) {
