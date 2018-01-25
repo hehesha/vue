@@ -37,7 +37,7 @@
               </div>
               <div class="c_pay clearfix">
               <label @click= "checkall"><input type="checkbox" class="demo-checkbox"/><span style="font-size:40px;margin-left:50px">全选</span></label>
-              <a href="#/order"><button>结算</button></a>
+              <a href="#/order" @click="updatalist(ids)"><button>结算</button></a>
               </div>
           </div>
         </div>
@@ -54,6 +54,7 @@
             dataset:[],
             total:[],
             totals:[],
+            ids:[],
         }
     },
     methods:{
@@ -75,7 +76,7 @@
               }
               event.target.parentNode.style.background = '#fefbec';
             }else{
-              this.totals = this.totals-money;
+              this.totals = this.totals - money;
               event.target.parentNode.style.background = '';
             }
 
@@ -84,7 +85,7 @@
         checkall:function(){
           if(event.target.tagName.toLowerCase() =='input'){
             if(event.target.checked){
-              console.log(event.target.find('li'))
+
             }
           }
         },
@@ -102,13 +103,28 @@
               ).then(function (response) {
                   self.dataset.splice(index,1)
             })
+        },
+        updatalist:function(id){
+            var self =this
+            var id=[];
+            for(var i=0;i<(this.dataset).length;i++){
+              if((this.dataset)[i].type==0){
+                id.push((this.dataset)[i].id);
+              }
+            }
+            axios.post('http://10.3.136.62:88/order_type',
+              qs.stringify({id:id,type:1}),
+              {headers: {'Content-Type': 'application/x-www-form-urlencoded'}}
+              ).then(function (response) {
+              console.log(response)
+
+            })
         }
     },
     beforeMount(){
       this.totals=0
       var self = this;
       axios.get('http://10.3.136.62:88/getorder').then(function (response) {
-          console.log(response)
           var item = response.data.data.results;
           item.forEach(function(ss){
             var bb = JSON.parse(ss.goods_detail)
@@ -117,7 +133,7 @@
             bb.type = accessory;
             bb.id = orderId;
             self.dataset.push(bb);
-            console.log(self.dataset)
+            self.ids.push(orderId);
           })
       })
     }

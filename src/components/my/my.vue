@@ -46,7 +46,7 @@
                 </div></a>
                 <div>
                     <mu-icon value="airport_shuttle" :size="50" color='black'/>
-                    <p>代发货</p>
+                    <p>待发货</p>
                 </div>
                 <div>
                     <mu-icon value="mode_edit" :size="50" color='black'/>
