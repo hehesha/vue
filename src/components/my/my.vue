@@ -10,8 +10,8 @@
         <div class="content">
 
             <div class="header_b">
-
-                <div>Dainel</div>
+				<img :src="imgurl"/>
+                
             </div>  
 
             <div class="user_money">
@@ -96,7 +96,15 @@
 <script>
     import './my.scss';
     export default {
-        
+        data(){
+        	return{
+        		imgurl:'',
+        	}
+        },
+        mounted:function(){
+			console.log(this.$store.state.head_img);
+			imgurl:this.$store.state.head_img;
+		}
     }
 </script>
 

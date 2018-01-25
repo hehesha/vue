@@ -15,8 +15,31 @@ Vue.use(VueLazyLoad,{
     attempt: 1
 });
 
+//zby新建一个状态管理
+import Vuex from 'vuex';
+Vue.use(Vuex);
 
-import Vuex from 'vuex'
+
+
+const store = new Vuex.Store({
+	state:{
+		//zby测试
+		text1:'tab-container2',
+		phone: '',
+		address:'',
+		head_img:'',
+		username:'',
+		add_time:'',
+	},
+	mutations: {
+        LoginPhone (state, phone) {
+            state.UserPhone = phone;
+            sessionStorage.setItem('userphone', JSON.stringify(state.UserPhone))
+        }
+    },
+})
+
+
 //zby:为了在全局环境中使用vue
 window.Vue = Vue;
 
@@ -44,6 +67,13 @@ import accessory from './components/buy/accessory/accessory.vue';
 import advice from './components/advice/advice.vue'
 import control from './components/sell/control.vue';
 import actdetail from './components/buy/act_detail/act_detail.vue'; 
+import login from './components/my/login.vue';
+import register from './components/my/register.vue';
+
+//zby子路由
+import cadd from './components/sell/control/cAdd.vue';
+import alreadypush from './components/sell/control/alreadypush.vue';
+import cprice from './components/sell/control/cprice.vue';
 
 
 
@@ -102,18 +132,36 @@ var router  = new VueRouter({
     {path:'/topush',component:topush,name:'商品提交页面'},
 	{path:'/advice',component:advice,name:'品牌建议'},
 
-	{path:'/control',component:control,name:'用户操控页面'},
-  {path:'/actdetail',component:actdetail},
-
-
+	{
+		path:'/control',
+		component:control,
+		name:'用户操控页面',
+		children:[{
+			path:'cadd',
+			component:cadd,
+		},{
+			path:'cprice',
+			component:cprice,
+		},{
+			path:'alreadypush',
+			component:alreadypush,
+		}]
+	},
+  	{path:'/actdetail',component:actdetail},
+	{path:'/login',component:login},
+	{path:'/register',component:register}
   ]
 })
 
 new Vue({
   el: '#app',
   router,
+  store,
+  create(){
+  	window.scope = this.$store.state;
+  	window.$store = this.$store;
+  },
   render: h => h(App)
-  
 })
 
 

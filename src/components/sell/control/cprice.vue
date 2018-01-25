@@ -1,7 +1,7 @@
 <template>
 	<div class="databox">
 		<h2>已报价</h2>
-		<ul>
+		<ul style="height: 10rem;">
 			<!--<li>
 				<p>
 					<img src="../../../assets/goodlist01.jpg"/>

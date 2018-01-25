@@ -2,7 +2,7 @@
 	<div class="sellhead">
 		<ul class="clearfix">
 			<li>
-				<mu-icon value="keyboard_arrow_left" @click = "$router.go(-1)"></mu-icon>
+				<mu-icon value="keyboard_arrow_left" @click = "$router.push('/sell')"></mu-icon>
 				
 			</li>
 			<li>

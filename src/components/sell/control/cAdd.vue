@@ -1,7 +1,7 @@
 <template>
 	<div class="databox">
 		<h2>待寄出</h2>
-		<ul>
+		<ul style="height: 10rem;">
 			<!--<li>
 				<p>
 					<img src="../../../assets/accessory.jpg"/>
@@ -67,7 +67,7 @@
 		      this[position + 'Popup'] = false
 		    },
 		    delete1(index,id){
-		    	console.log(index,id)
+
 		    	var self = this;
 		    	self.$axios({
 		    		method:'POST',
@@ -75,11 +75,14 @@
 		    		data:qs.stringify({id:id}),
 					headers:{'Content-Type': "application/x-www-form-urlencoded"}
 		    		
-		    	}).catch(function(err){
-		    		console.log(err);
-		    	}).then(function(index){
+		    	}).then(function(index,id){
 		    		self.selllist.splice(index,1);
+		    		
+		    		
 		    	})
+		    },
+		    create(res){
+		    	
 		    }
 		},
 		//这里是获取数据库的信息
