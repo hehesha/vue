@@ -15,7 +15,7 @@
                 <h3 @click="toggle">购买清单 <mu-icon :value="arrow"/></h3>
                 <ul class="g_list">
                     <li v-for="(value,key) in dataset"  v-if="value.type == 1">
-                        <img :src="value.goods_pto" class="pic">
+                        <img v-lazy="value.goods_pto" class="pic">
                         <div class="c_content">
                             <h3>{{value.goods_trademark}}</h3>
                             <h4>{{value.goods_name}}</h4>
@@ -46,6 +46,9 @@
             <span>实付<b>￥{{moneys}}</b></span>
             <button>去支付</button>
         </div>
+        <div class="succeed">
+            支付成功
+        </div>
     </div>
 </template>
 
@@ -73,6 +76,8 @@
             }
         },
         peyment:function(){
+            var $succeed = $('.succeed');
+            $succeed.fadeIn(1000).fadeOut(3000);
             var goodsID = [];
             console.log(this.dataset)
             for(var i=0;i<this.dataset.length;i++){

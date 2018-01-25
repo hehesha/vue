@@ -20,8 +20,8 @@
               <mu-icon value="delete_forever" color="red" class="delete" :size="32" @click="deletes(value.id,key,$event)"/>
               <input type=checkbox class="demo-checkbox"/>
               </span>
-              <div @click="skip" style="margin-left:50px;">
-                <img :src="value.goods_pto" class="pic">
+              <div style="margin-left:50px;">
+                <img v-lazy="value.goods_pto" class="pic">
                 <div class="c_content" @click="skip">
                   <h3>{{value.goods_trademark}}</h3>
                   <h4>{{value.goods_name}}</h4>
@@ -88,8 +88,18 @@
               }
           },
         skip:function(e){
-          var $Li = e.find('li').attr('id');
-          console.log($Li )
+          var $Li = e.target.closest('li');
+          var goodsId = $Li.getAttribute('id');
+          axios.get('http://10.3.136.62:88/getorder').then(function (response) {
+            var data = response.data.data.results;
+            for(var i=0;i<data.length;i++){
+              if(data[i].id == goodsId){
+                  var id = JSON.parse(data[i].goods_detail).id;
+                  location.href ='http://localhost:8080/#/detail?id='+id;
+              }
+            }
+          })
+          
         },
         checkall:function(e){
             var $all=$('.all');
@@ -105,7 +115,6 @@
                     var price=$($lis[i]).find('b').html()*1;
                     total+=price;
                 }
-                console.log(total);
                 this.totals=total;
             }else{
             this.totals=0;
