@@ -1,8 +1,8 @@
 <template>
 	<div class="databox">
-		<h2>您有宝贝正在售卖中哟~</h2>
-		<ul @click="$router.push('detail?id=2')">
-			<li>
+		<h2>正在售卖中</h2>
+		<ul style="height: 10rem;">
+			<li @click="$router.push('/detail?id=2')">
 				<p>
 					<img src="../../../assets/goodlist1.jpg"/>
 					<span>包类</span>

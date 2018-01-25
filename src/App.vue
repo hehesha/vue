@@ -10,7 +10,7 @@
         <mu-icon value="favorite_border"></mu-icon>
         <span>购买</span>
       </a>
-      <a class="app_btn" href="#/my">
+      <a class="app_btn" href="#/login">
         <mu-icon value="face"></mu-icon>
         <span>我的</span>
       </a>
