@@ -109,9 +109,13 @@ Vue.use(VueRouter);
 var router  = new VueRouter({
   routes:[
   	{path:'/',component:buy},
-    {path:'/sell',component:sell,name:'卖出页面主键'},
+    {path:'/sell',component:sell,name:'卖出页面主键',meta:{
+    	requireAuth:true,
+    }},
     {path:'/howtosell',component:howToSell,name:'卖出教学'},
-    {path:'/my',component:my},
+    {path:'/my',component:my,meta:{
+    	requireAuth:true,
+    }},
     {path:'/buy',component:buy},
     {path:'/setting',component:setting},
     {path:'/girlclothes',component:girlclothes},
@@ -157,6 +161,21 @@ var router  = new VueRouter({
 
 
   ]
+})
+
+router.beforeEach((to,from,next)=>{
+	if(to.meta.requireAuth){
+		if(store.state.token){
+			next();
+		}else{
+			next({
+				path:'/login',
+				query:{redirect:to.fullPath}
+			})
+		}
+	}else{
+		next();
+	}
 })
 
 new Vue({

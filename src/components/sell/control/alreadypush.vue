@@ -108,4 +108,8 @@
 			font-weight: bold;
 		}
 	}
+	.mint-tab-container-item{
+		overflow: scroll;
+		height: 10rem;
+	}
 </style>

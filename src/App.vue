@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+
+  		<router-view></router-view>
+  		
+
     <div class="app_title">
       <a class="app_btn" href="#/sell">
         <mu-icon value="monetization_on"></mu-icon>
@@ -10,7 +13,7 @@
         <mu-icon value="favorite_border"></mu-icon>
         <span>购买</span>
       </a>
-      <a class="app_btn" href="#/login">
+      <a class="app_btn" href="#/my">
         <mu-icon value="face"></mu-icon>
         <span>我的</span>
       </a>

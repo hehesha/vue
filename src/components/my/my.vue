@@ -68,7 +68,7 @@
 
             <div class="shoppingList1 shoppingList2">
                 
-                <div class="shoppingList_wz" @click = "$router.push('control')">
+                <div class="shoppingList_wz" @click = "$router.push('/control/cadd')">
 
                     <span>我卖的闲置</span><span>查看全部<mu-icon value="chevron_right" :size="42" color='#ccc' vertical-align="center"/></span>
                 </div>
