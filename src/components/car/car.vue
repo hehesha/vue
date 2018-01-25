@@ -20,7 +20,7 @@
               <mu-icon value="delete_forever" color="red" class="delete" :size="32" @click="deletes(value.id,key,$event)"/>
               <input type=checkbox class="demo-checkbox"/>
               </span>
-              <div @click="skip" style="margin-left:50px;">
+              <div style="margin-left:50px;">
                 <img :src="value.goods_pto" class="pic">
                 <div class="c_content" @click="skip">
                   <h3>{{value.goods_trademark}}</h3>
@@ -88,8 +88,26 @@
               }
           },
         skip:function(e){
-          var $Li = e.find('li').attr('id');
-          console.log($Li )
+          var $Li = e.target.closest('li');
+          var goodsId = $Li.getAttribute('id');
+          axios.get('http://10.3.136.62:88/getorder').then(function (response) {
+            var data = response.data.data.results;
+            //var dataID = data.id;
+            //console.log(dataID)
+            (function(){
+              for(var j=0;j<data.length;j++){
+                var goods = JSON.parse(data[j].goods_detail);
+              }
+            })()
+            
+            for(var i=0;i<data.length;i++){
+              if(data[i].id == goodsId){
+                  //data[i].goods_detail.
+              }
+            }
+            console.log(goods);
+          })
+          //location.href ='http://localhost:8080/#/detail?id='+3;
         },
         checkall:function(e){
             var $all=$('.all');

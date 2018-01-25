@@ -46,6 +46,9 @@
             <span>实付<b>￥{{moneys}}</b></span>
             <button>去支付</button>
         </div>
+        <div class="succeed">
+            支付成功
+        </div>
     </div>
 </template>
 
@@ -73,6 +76,8 @@
             }
         },
         peyment:function(){
+            var $succeed = $('.succeed');
+            $succeed.fadeIn(1000).fadeOut(3000);
             var goodsID = [];
             console.log(this.dataset)
             for(var i=0;i<this.dataset.length;i++){
