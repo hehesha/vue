@@ -3,7 +3,7 @@
         <div class="s_main">
             <div class="s_title clearfix">
                 <div class="s_search">
-                    <mu-icon value="search"/>
+                    <mu-icon value="search" @click="toseek"/>
                     <input type="text" placeholder="简单清新少女心"/>
                 </div>
                 <span @click="$router.push('/buy')">取消</span>

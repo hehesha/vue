@@ -37,7 +37,7 @@
     },
         beforeMount(){
             var self = this;
-            axios.get('http://10.3.136.62:88/getorder').then(function (response) {
+            axios.get('http://10.3.136.62:88/getorder',{params:{username:this.username}}).then(function (response) {
                 var item = response.data.data.results;
                 item.forEach(function(ss){
                     var bb = JSON.parse(ss.goods_detail)
@@ -48,8 +48,13 @@
                     self.dataset.push(bb);
                 })
             })
-        }
+        },
 
-        
+        computed:{
+			username:function(){
+				return this.$store.state.username;
+				
+			},
+		}
     }
 </script>

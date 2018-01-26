@@ -90,7 +90,7 @@
         skip:function(e){
           var $Li = e.target.closest('li');
           var goodsId = $Li.getAttribute('id');
-          axios.get('http://10.3.136.62:88/getorder').then(function (response) {
+          axios.get('http://10.3.136.62:88/getorder',{params:{username:this.username}}).then(function (response) {
             var data = response.data.data.results;
             for(var i=0;i<data.length;i++){
               if(data[i].id == goodsId){

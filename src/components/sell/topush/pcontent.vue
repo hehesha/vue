@@ -204,9 +204,7 @@
 
 			
 		},
-		components:{
-			
-		}
+		
 		
 	}
 </script>

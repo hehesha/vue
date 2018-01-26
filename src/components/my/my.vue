@@ -110,7 +110,7 @@ import './../sell/sell.scss';
         	}
         },
         mounted:function(){
-			console.log(this.$store.state.head_img,this.headImg);
+			//console.log(this.$store.state.head_img,this.headImg);
 
 		},
 		computed:{
