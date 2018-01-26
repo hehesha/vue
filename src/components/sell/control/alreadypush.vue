@@ -4,7 +4,7 @@
 		<ul style="height: 10rem;">
 			<li @click="$router.push('/detail?id=2')">
 				<p>
-					<img src="../../../assets/goodlist1.jpg"/>
+					<img src="../../../assets/goodlist3_1.jpg"/>
 					<span>包类</span>
 					<span style="color: #FD5C02;padding-left: 0.266666rem;">品牌：卡洛黛茜</span>
 					

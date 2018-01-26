@@ -95,7 +95,8 @@
             for(var i=0;i<data.length;i++){
               if(data[i].id == goodsId){
                   var id = JSON.parse(data[i].goods_detail).id;
-                  location.href ='http://localhost:8080/#/detail?id='+id;
+                  location.href ='http://10.3.136.153:8080/#/detail?id='+id;
+//                this.$router.push('/detail?id='+id')
               }
             }
           })

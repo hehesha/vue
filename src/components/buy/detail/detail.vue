@@ -101,6 +101,7 @@
             }
         },
         mounted(){
+        	
             var self = this;
             var bb = location.hash.split('?')[1].split('=')[1];
             axios.get('http://10.3.136.62:88/detail',{params: {id: bb,username:this.username}}).then(function (response) {
@@ -109,11 +110,9 @@
             })
         },
         methods:{
-
+			
             shopping:function(id){
-            	console.log(this.username)
                 axios.get('http://10.3.136.62:88/order',{params:{list:(this.b)[0],username:this.username}}).then(function (response) {
-                    console.log(response)
                     if(response.data.status == true){
                         var $flew = $('.flew');
                         $flew.animate({
@@ -130,7 +129,7 @@
             },
         },
         computed:{
-			username:function(){console.log(this.$store.state.username)
+			username:function(){
 				return this.$store.state.username;
 				
 			},
