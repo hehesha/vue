@@ -60,7 +60,9 @@ export default {
             var data=$('.s_search input').val();
             data=decodeURI(data);
             console.log(data);
-            location.href ='http://localhost:8080/#/seek?data='+data;
+//          	错误写法
+//          location.href ='#/seek?data='+data;
+            this.$router.push({path:'/seek',query:{data:data}})
         }
    },
 }

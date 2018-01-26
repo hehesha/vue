@@ -3,8 +3,12 @@ import App from './App.vue'
 
 import VueRouter from 'vue-router'
 import axios from 'axios'
+
+//zby全局使用的基础地址
+axios.defaults.baseURL = "http://10.3.136.153:8080";
 //zby全局使用axios
 Vue.prototype.$axios = axios ;
+
 
 //zby预加载
 import VueLazyLoad from 'vue-lazyload';
@@ -73,6 +77,7 @@ import cadd from './components/sell/control/cAdd.vue';
 import alreadypush from './components/sell/control/alreadypush.vue';
 import cprice from './components/sell/control/cprice.vue';
 import seek from './components/search/seek.vue';
+import blogger from './components/buy/blogger/blogger.vue';
 
 
 
@@ -139,6 +144,7 @@ var router  = new VueRouter({
     {path:'/accessory',component:accessory},
     {path:'/topush',component:topush,name:'商品提交页面'},
 	{path:'/advice',component:advice,name:'品牌建议'},
+	{path:'/blogger',component:blogger},
 
 
 	{

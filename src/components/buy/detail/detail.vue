@@ -93,6 +93,7 @@
 <script>
     import axios from 'axios';
     import './detail.scss';
+    
     export default {
         data(){
             return {

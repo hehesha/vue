@@ -62,21 +62,21 @@ export default {
                 imgsrc='.'+aa[1];               
                 act=encodeURI(act);
                 imgsrc=encodeURI(imgsrc);
-                location.href='http://10.3.136.153:8080/#/actdetail?activity='+act+"&imgsrc="+imgsrc;
+                location.href='#/actdetail?activity='+act+"&imgsrc="+imgsrc;
             }else if(e.target.parentNode.tagName=='LI'){
                 
                 if(e.target.parentNode.children[0].tagName=='IMG'){
                     //跳转到详情页
                     var key=e.target.parentNode.children[0].getAttribute('data-imgid');
                    
-                    location.href ='http://10.3.136.153:8080/#/detail?id='+key;
+                    location.href ='#/detail?id='+key;
                 }else if(e.target.parentNode.children[0].tagName=='SPAN'){
                     //跳转到活动详情
                     var act=e.target.getAttribute('data-type');
                     var imgsrc=e.target.getAttribute('data-src');
                     act=encodeURI(act);
                     imgsrc=encodeURI(imgsrc);
-                    location.href='http://10.3.136.153:8080/#/actdetail?activity='+act+"&imgsrc="+imgsrc;
+                    location.href='#/actdetail?activity='+act+"&imgsrc="+imgsrc;
                 }
             }
         }
