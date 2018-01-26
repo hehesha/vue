@@ -15,9 +15,7 @@
                 <p style="font-size:36px;line-height:1.04rem;font-weight:bold">{{b[0].goods_name}}</p>
                 <p>{{b[0].title_name}}</p>
                 <p>{{b[0].size}}</p>
-                <p style="color:#E98345">￥{{b[0].sell_price}}</p>
-                <span>{{b[0].sell_prices}}</span>
-                <b>{{cc}}折</b>
+                <p style="color:#E98345">￥{{b[0].sell_price}}<span>￥{{b[0].sell_prices}}</span></p> 
             </div>
             <div class="goods_foot_c">
                 <div><mu-icon value="done"></mu-icon><span>专业正品鉴定</span></div>
@@ -98,25 +96,23 @@
     export default {
         data(){
             return {
-                b:[]
-            }
-        },
-        computed:{
-            cc:function(){
-                return ((this.b[0].sell_price/this.b[0].sell_prices)*10).toFixed(1);
+                b:[],
+                cc:[]
             }
         },
         mounted(){
             var self = this;
             var bb = location.hash.split('?')[1].split('=')[1];
-            axios.get('http://10.3.136.62:88/detail',{params: {id: bb}}).then(function (response) {
+            axios.get('http://10.3.136.62:88/detail',{params: {id: bb,username:this.username}}).then(function (response) {
                  self.b = response.data.data.results;
-                 console.log(self.b )
+                 //console.log(self.b )
             })
         },
         methods:{
+
             shopping:function(id){
-                axios.get('http://10.3.136.62:88/order',{params:(this.b)[0]}).then(function (response) {
+            	console.log(this.username)
+                axios.get('http://10.3.136.62:88/order',{params:{list:(this.b)[0],username:this.username}}).then(function (response) {
                     console.log(response)
                     if(response.data.status == true){
                         var $flew = $('.flew');
@@ -132,6 +128,12 @@
                     }
                 })
             },
-        }
+        },
+        computed:{
+			username:function(){console.log(this.$store.state.username)
+				return this.$store.state.username;
+				
+			},
+		}
     }
 </script>

@@ -106,7 +106,7 @@ import './../sell/sell.scss';
     export default {
         data(){
         	return{
-        		userId:'',
+        		
         	}
         },
         mounted:function(){

@@ -43,8 +43,9 @@
             },
             aa:function(key){
                 var key = key+1;
-                location.href ='http://localhost:8080/#/detail?id='+key;
-                
+
+                location.href ='http://10.3.136.153:8080/#/detail?id='+key;
+
             }
         }
     }

@@ -1,3 +1,8 @@
+#goods{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+}
 #head{
     display:flex;
     justify-content: space-between;
@@ -48,4 +53,7 @@
 }
 #goods i{
     vertical-align:middle;
+}
+.b_footer{
+    height:1.333333rem;
 }

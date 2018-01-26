@@ -95,6 +95,10 @@ import $ from "jquery";
 window.$ = window.jQuery = $ ;
 
 
+
+
+
+
 //zby:使用轮播图
 import VueAwesomeSwiper from 'vue-awesome-swiper';
 import 'swiper/dist/css/swiper.css';
@@ -127,7 +131,7 @@ var router  = new VueRouter({
     {path:'/news',component:news,name:'信息接受页面'},
     {path:'/sifts',component:sifts},
     {path:'/detail',component:detail},
-    {path:'/car',component:car},
+    {path:'/car',component:car,meta:{requireAuth:true,}},
     {path:'/order',component:order},
     {path:'/addaddress',component:addaddress},
     {path:'/address',component:address},

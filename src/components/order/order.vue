@@ -97,7 +97,8 @@
     beforeMount(){
         this.totals=0
         var self = this;
-        axios.get('http://10.3.136.62:88/getorder').then(function (response) {
+        axios.get('http://10.3.136.62:88/getorder',{params:{username:this.username}}).then(function (response) {
+        	console.log(response)
             var total = [];
             var money = 0;
             var item = response.data.data.results;
@@ -121,7 +122,13 @@
             }
             self.moneys = money;
       })
-    }
+    },
+    computed:{
+		username:function(){console.log(this.$store.state.username)
+			return this.$store.state.username;
+			
+		},
+	}
 }
 
 </script>
