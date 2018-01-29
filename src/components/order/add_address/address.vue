@@ -131,6 +131,7 @@ const address = {
                 this.bottomPopup = false
             },
             addressChange (value, index) {
+
               switch (index) {
                 case 0:
                   this.addressProvince = value
@@ -146,6 +147,8 @@ const address = {
             },
             commit(){
                 //表单验证
+                var self=this;
+                console.log(self);
                 var $user=$('#user');
                 var $phone=$('#phone');
                 var $address=$('#address');
@@ -179,23 +182,28 @@ const address = {
                                   duration: 3000
                                 });
                             }else{
+                            console.log(this.phone,$('#user').val());
                             //添加成功，准备跳转
                             //将信息添加到数据库
                             axios.post('http://10.3.136.62:88/insert_address',
                               qs.stringify({
-                              phone:this.phone,name:$('#id').val(),
+                              phone:this.phone,
+                              name:$('#user').val(),
                               relation:$('#phone').val(),
                               localarea:this.area,
                               address:$('#address').val()
                               }), 
                               {headers: {'Content-Type': 'application/x-www-form-urlencoded'}}
                           ).then(function(res){
-                              console.log(res,res.status);
-                              if(res.status==200){
+                              console.log(res,res.data.status);
+                              if(res.data.status){
                                  Toast({
                                   message: '保存成功',
                                   duration: 3000
                                 });
+                                //跳转到地址页面
+                                
+                                self.$router.push({path:'/addaddress'});
                               }
                           })
                             }
@@ -215,7 +223,7 @@ const address = {
             }
           },
           computed:{
-      username:function(){
+      phone:function(){
         return this.$store.state.phone;       
       },
     }
