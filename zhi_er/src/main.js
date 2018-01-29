@@ -9,6 +9,7 @@ import router from './router'
 Vue.use(VueRouter);
 Vue.use(ElementUI);
 
+
 new Vue({
   el: '#app',
   router,
