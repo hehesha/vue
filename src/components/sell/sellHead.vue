@@ -2,7 +2,7 @@
 	<div class="sellhead">
 		<ul class="clearfix">
 			<li>
-				<mu-icon value="notifications_none" />	
+				<mu-icon value="notifications_none" @click="tonews()"/>	
 			</li>
 			<li>
 				<span>只</span>
@@ -20,10 +20,18 @@
 				
 			}
 		},
+		methods:{
+			tonews(){
+				this.$router.push("news");
+			}
+		}
 		
 	}
 </script>
 
 <style lang="scss">
-	
+	.sellhead{
+        background-color: #F5F5F5;
+		
+	}
 </style>

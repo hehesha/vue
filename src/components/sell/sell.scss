@@ -7,12 +7,17 @@
 
 //卖出页面的头部的样式
 .sellhead{
-        background-color: #F5F5F5;
+
         height:1.2rem;
         i{
             font-size: 0.56rem;
+            vertical-align: middle;
             
         }
+        span{
+            vertical-align: middle;
+        }
+        
         ul{
             height: 100%;
             width: 100%;
@@ -56,7 +61,13 @@
                 }
             }
             li:nth-child(3){
-                
+                span{
+                    color: darkred;
+                    font-size: 0.32rem;
+                }
+                i{
+                    color: darkred;
+                }
             }
         }
     }
@@ -140,6 +151,11 @@
         justify-content: center;
         align-items: center;
     } 
+    .swiper-pagination-bullet{
+        width: 0.433333rem;
+        height: 0.433333rem;
+        
+    }
 }
 //卖出教学页面的内容
 .word-box{

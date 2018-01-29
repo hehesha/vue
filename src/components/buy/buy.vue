@@ -1,16 +1,11 @@
 <template>
-    <div class="buy">
+
+    <div id="goods">
         <heads></heads>
-        <div id="nav" @click="incrementTotal">
-            <a href="#">上新</a>
-            <a href="#">精选</a>
-            <a href="#">女装</a>
-            <a href="#">包袋</a>
-            <a href="#">配饰</a>
-            <a href="#">女鞋</a>
-        </div>
         <selected class="selected"></selected>
-    </div>  
+        <div class="b_footer"></div>
+        
+    </div>
 </template>
 
 <script>
@@ -28,7 +23,14 @@
                     item[i].style.borderBottom="";
                 }
                 event.target.style.borderBottom = "1px solid red";
+            },
+            aa(){
+            	console.log(666);
             }
+        },
+        mounted(){
+        	window.addEventListener('scroll',this.aa);
         }
     }
 </script>
+

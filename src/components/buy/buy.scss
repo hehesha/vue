@@ -1,7 +1,13 @@
+#goods{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+}
 #head{
     display:flex;
     justify-content: space-between;
     height:1.2rem;
+    border-bottom:1px solid #ccc;
 }
 .head_c{
     font-size:0.56rem;
@@ -40,11 +46,14 @@
     display:block;
     text-align: center
 }
-#banner ul li{
-    background:url('../../assets/banner.jpg') no-repeat;
-    background-position:center;
-    height:400px;
+
+
+#goods a{
+    color:#000;
 }
-.buy{
-    height: 92%;display:flex;flex-direction:column;
+#goods i{
+    vertical-align:middle;
+}
+.b_footer{
+    height:1.333333rem;
 }

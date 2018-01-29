@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+
+  		<router-view></router-view>
+  		
+
     <div class="app_title">
       <a class="app_btn" href="#/sell">
         <mu-icon value="monetization_on"></mu-icon>
@@ -33,7 +36,7 @@ export default {}
     display: flex;
     position: fixed;
     bottom: 0;
-    
+    background:#fff;
     a{
       display: block;
       flex:1;
@@ -41,6 +44,9 @@ export default {}
       border-right: 1px solid #ccc;
       text-align: center;
       font-size: 24px;
+      z-index: 0;
+      //line-height: 100px;
+
       /*line-height: 100px;*/
       span{
     	/*zby我在这里添加了首页的字体图标*/
