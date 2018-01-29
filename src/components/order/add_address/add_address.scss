@@ -26,9 +26,55 @@
     overflow-x:hidden;
     font-size:0.4rem;
     color:#9F9F9F;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    // display:flex;
+    // align-items:center;
+    // justify-content:center;
+    dl{
+        width:100%;
+        dt{
+            padding:0 0.4rem;
+            background:#fff;
+            margin-top:0.2rem;
+            margin-bottom:0.026667rem;
+            h3{
+                line-height:1.2rem;
+                span{
+                    float:right;
+                }
+            }
+        }
+        dd{
+            background:#fff;
+            padding:0 0.4rem;
+            label{
+                width:5.333333rem;
+                font-size:0.333333rem;
+                height:0.8rem;
+                padding-top:0.266667rem;
+                .mu-radio-label{
+                    font-size:0.346667rem;
+                    color:red;
+                    margin:0.4rem 0;
+                }
+            }
+            span{
+                margin:0 0.4rem;
+                font-size:0.32rem;
+                i{
+                    font-size:0.4rem;
+                    color:#ccc;
+                    // float:left;
+                    margin-right:0.133333rem;
+                }
+            }
+        }
+    }
+    .none{
+        display:block;
+        width:4.0rem;
+        margin:4.0rem auto;
+        padding:0 0.533333rem;
+    }
 
 }
 .a_footer{
